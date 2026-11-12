@@ -235,6 +235,11 @@ body.has-stickybar{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 }
 @media (min-width:720px){.hero h1{font-size:40px}.hooktitle{font-size:34px}.grid{grid-template-columns:repeat(auto-fill,minmax(168px,1fr))}}
 @media (min-width:900px){.heroposter{width:180px}.herocard{padding:20px}.herotitle{font-size:20px}.rail .acard{flex-basis:158px}}
+/* T6 (TEST 2026-11-13): desktop-only section air on home + /charts/ only.
+   Scoped by body.pg-t6 (set only on the EN home + /charts/ writePage calls),
+   so drama pages and /ja/ (writePageJa passes no pageClass) are untouched.
+   30px -> 56px at >=900px; mobile keeps the 24px rule at max-width:899px. */
+@media (min-width:900px){body.pg-t6 section{margin:0 0 56px}}
 @media (max-width:899px){section{margin:0 0 24px}.panel{padding:18px}.herocard{padding:14px}.crumb{margin:14px 0 8px}table{font-size:13.5px}th,td{padding:8px 8px}.hero h1{font-size:28px}}
 /* --- JP locale additions (scoped: .lang-ja / .ja-ad / PR components only) --- */
 body.lang-ja{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:400}
