@@ -15,7 +15,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TVSeries","name":"Tempting the Wild Heart","url":"https://drama.yuzucalc.com/dramas/tempting-the-wild-heart/","image":"https://v-img.crazymaplestudios.com/v-images/book_cover_batch/204200150000008962/b06aea53-99df-4975-9047-1a29a15156a2.jpg"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://drama.yuzucalc.com/"},{"@type":"ListItem","position":2,"name":"Dramas","item":"https://drama.yuzucalc.com/dramas/"},{"@type":"ListItem","position":3,"name":"Tempting the Wild Heart","item":"https://drama.yuzucalc.com/dramas/tempting-the-wild-heart/"}]}</script>
@@ -118,6 +118,18 @@ Some outbound links are affiliate links; they never change the price you pay.</p
 // users no scroll signal. Progressive enhancement only: wrap each rail and
 // add prev/next buttons that scroll by 80% of the rail width.
 (function(){if(!window.matchMedia||!matchMedia('(min-width:900px)').matches)return;document.querySelectorAll('.rail').forEach(function(rail){var wrap=document.createElement('div');wrap.className='railwrap';rail.parentNode.insertBefore(wrap,rail);wrap.appendChild(rail);[['prev','‹','Scroll back'],['next','›','Scroll forward']].forEach(function(cfg){var b=document.createElement('button');b.type='button';b.className='railbtn '+cfg[0];b.textContent=cfg[1];b.setAttribute('aria-label',cfg[2]);b.addEventListener('click',function(){rail.scrollBy({left:(cfg[0]==='prev'?-1:1)*rail.clientWidth*0.8,behavior:'smooth'});});wrap.appendChild(b);});});})();
+</script>
+<script>
+// v4.4 (DESIGN_BORROW2 ADOPT 6+7): Direction Aware Hover on poster cards and
+// 3D tilt on the home hero spotlight card. Desktop fine-pointer only; fully
+// inert on touch, below 900px, and under prefers-reduced-motion. Delegated
+// mouseover/mouseout so client-rendered search cards are covered too.
+(function(){if(!window.matchMedia)return;if(!matchMedia('(min-width:900px) and (pointer:fine)').matches)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+function dirOf(e,el){var r=el.getBoundingClientRect();var x=e.clientX-r.left-r.width/2;var y=e.clientY-r.top-r.height/2;var a=Math.atan2(y,x)*180/Math.PI;if(a>=-45&&a<45)return 'r';if(a>=45&&a<135)return 'b';if(a<-45&&a>=-135)return 't';return 'l';}
+function pwOf(e){var t=e.target;if(!t||!t.closest)return null;var pw=t.closest('.posterwrap');if(!pw||(e.relatedTarget&&pw.contains(e.relatedTarget)))return null;return pw;}
+document.addEventListener('mouseover',function(e){var pw=pwOf(e);if(!pw)return;var ov=pw.querySelector(':scope > .dah');if(!ov)return;ov.setAttribute('data-dir',dirOf(e,pw));ov.classList.add('on');});
+document.addEventListener('mouseout',function(e){var pw=pwOf(e);if(!pw)return;var ov=pw.querySelector(':scope > .dah');if(!ov)return;ov.setAttribute('data-dir',dirOf(e,pw));ov.classList.remove('on');});
+document.querySelectorAll('.tiltcard').forEach(function(card){card.addEventListener('mousemove',function(e){card.classList.add('tilting');var r=card.getBoundingClientRect();var rx=(e.clientY-r.top-r.height/2)/25;var ry=(e.clientX-r.left-r.width/2)/25;rx=Math.max(-6,Math.min(6,rx));ry=Math.max(-6,Math.min(6,ry));card.style.transform='translateX(11px) rotateX('+(-rx).toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';});card.addEventListener('mouseleave',function(){card.style.transform='';card.classList.remove('tilting');});});})();
 </script>
 </body>
 </html>
