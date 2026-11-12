@@ -7,11 +7,12 @@ a{color:var(--navy2);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 header.site{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-header.site .wrap{display:flex;align-items:center;gap:20px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
-.logo{font-weight:800;font-size:20px;color:var(--ink)}
+header.site .wrap{display:flex;align-items:center;gap:18px;padding-top:12px;padding-bottom:12px;flex-wrap:nowrap}
+.logo{font-weight:800;font-size:20px;color:var(--ink);flex:0 0 auto}
 .logo span{color:var(--accent)}
-nav.main{display:flex;gap:16px;flex-wrap:wrap;font-size:15px}
-nav.main a{color:var(--ink)}
+nav.main{display:flex;gap:18px;flex-wrap:nowrap;overflow-x:auto;font-size:15px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.main::-webkit-scrollbar{display:none}
+nav.main a{color:var(--ink);white-space:nowrap;padding:6px 0}
 .hero{background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff;border-radius:0 0 var(--radius) var(--radius);
 padding:48px 0 56px;margin-bottom:28px}
 .hero h1{font-size:32px;line-height:1.2;margin:0 0 12px}
@@ -55,14 +56,33 @@ article.guide li{margin-bottom:8px}
 footer.site{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:24px 0 40px;margin-top:16px}
 .dhead{display:flex;gap:20px;flex-wrap:wrap}
 .dhead img{width:180px;aspect-ratio:2/3;object-fit:cover;border-radius:18px;background:#dfe3ea}
-.hooktitle{font-size:29px;line-height:1.25;margin:0 0 6px}
-.meters{min-width:250px;flex:1}
-.meter{display:grid;grid-template-columns:118px 1fr 28px;align-items:center;gap:10px;margin:7px 0;font-size:14px}
-.meter .bar{height:10px;background:#eef1f6;border-radius:99px;overflow:hidden}
-.meter .fill{height:100%;background:var(--accent)}
-details.gate{border:1.5px dashed #b9c2d4;border-radius:var(--radius);padding:18px 20px;background:#fbfcfe}
-details.gate summary{cursor:pointer;font-weight:800;font-size:17px}
+.hooktitle{font-size:28px;line-height:1.22;margin:0 0 12px}
+.herocard{padding:14px}
+.herorow{display:flex;gap:14px;align-items:flex-start}
+.heroposter{width:118px;aspect-ratio:2/3;object-fit:cover;border-radius:14px;background:#dfe3ea;flex:0 0 auto}
+.heroinfo{flex:1;min-width:0}
+.herometa{color:var(--muted);font-size:13.5px;font-weight:600;margin:0 0 3px}
+.herotitle{font-weight:800;font-size:17px;line-height:1.3;margin:0 0 6px}
+.hmeter{margin:7px 0}
+.hmeter .hm-top{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;margin:0 0 4px}
+.hmeter .bar{display:block;height:8px;background:#eef1f6;border-radius:99px;overflow:hidden}
+.hmeter .fill{display:block;height:100%;background:var(--accent)}
+.chipsrow{margin:14px 2px 0}
+.btn.wide{display:block;text-align:center}
+.spotgrid{display:grid;gap:12px;grid-template-columns:1fr}
+.spotcard{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:10px;align-items:flex-start;color:var(--ink)}
+.spotcard:hover{text-decoration:none;border-color:#c3cede}
+.spotcard img{width:72px;aspect-ratio:2/3;object-fit:cover;border-radius:12px;background:#dfe3ea;flex:0 0 auto}
+.spotcard .hook{font-weight:700;font-size:16px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.spotcard .m{display:block;color:var(--muted);font-size:13.5px;margin-top:4px}
+details.gate{border:1.5px dashed #b9c2d4;border-radius:var(--radius);padding:8px 18px 18px;background:#fbfcfe}
+details.gate summary{cursor:pointer;font-weight:800;font-size:17px;list-style:none;display:flex;align-items:center;gap:10px;min-height:48px;padding:6px 0}
+details.gate summary::-webkit-details-marker{display:none}
+details.gate summary::after{content:"\25BE";margin-left:auto;color:var(--navy2);font-size:22px;line-height:1;transition:transform .2s ease}
+details.gate[open ] summary::after{transform:rotate(180deg)}
 details.gate summary:hover{color:var(--navy2)}
 .grid.wide{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
 .cta-row{margin-top:16px}
 @media (min-width:720px){.hero h1{font-size:42px}.grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}.hooktitle{font-size:35px}}
+@media (min-width:900px){.heroposter{width:180px}.herocard{padding:20px}.herotitle{font-size:20px}.spotgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:899px){section{margin:0 0 24px}.panel{padding:18px}.herocard{padding:14px}.crumb{margin:14px 0 8px}}
