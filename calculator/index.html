@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0c">
-<title>Short Drama Cost Calculator: What It Really Costs to Finish a Series | DramaFinish</title>
-<meta name="description" content="Work out what it really costs to finish a short drama series: coins vs a one-week subscription, for ReelShort and DramaBox.">
+<title>Short Drama Cost Calculator — Coins vs Subscription | DramaFinish</title>
+<meta name="description" content="How much does it cost to finish a short drama series? Compare buying episodes with coins vs a subscription on ReelShort and DramaBox.">
 <link rel="canonical" href="https://drama.yuzucalc.com/calculator/">
 <link rel="alternate" hreflang="en" href="https://drama.yuzucalc.com/calculator/">
 <link rel="alternate" hreflang="ja" href="https://drama.yuzucalc.com/ja/calculator/">
 <link rel="alternate" hreflang="x-default" href="https://drama.yuzucalc.com/calculator/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DramaFinish">
-<meta property="og:title" content="Short Drama Cost Calculator: What It Really Costs to Finish a Series | DramaFinish">
-<meta property="og:description" content="Work out what it really costs to finish a short drama series: coins vs a one-week subscription, for ReelShort and DramaBox.">
+<meta property="og:title" content="Short Drama Cost Calculator — Coins vs Subscription | DramaFinish">
+<meta property="og:description" content="How much does it cost to finish a short drama series? Compare buying episodes with coins vs a subscription on ReelShort and DramaBox.">
 <meta property="og:url" content="https://drama.yuzucalc.com/calculator/">
 <meta property="og:locale" content="en_US">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
-
+[object Object]
 </head>
 <body>
 
@@ -40,87 +40,96 @@
 </div></header>
 
 <main class="wrap">
-<p class="crumb"><a href="/">Home</a> / Calculator</p>
 <section>
-<h2>Finish-cost calculator</h2>
-<p class="sub">Pick an app and a series length. We compare paying with coins against a one-week subscription — the two ways people actually finish a series.</p>
-<div class="panel calc">
-<label for="app">App</label>
-<select id="app">
-<option value="reelshort">ReelShort</option>
-<option value="dramabox">DramaBox</option>
-</select>
-<label for="epsRange">Episodes in the series</label>
-<input type="range" id="epsRange" min="10" max="200" step="1" value="80">
-<label for="eps">Episode count</label>
-<input type="number" id="eps" min="1" max="500" value="80">
-<div class="tablebox" style="margin-top:20px"><table>
-<tr><th>Way to pay</th><th>Total cost</th></tr>
-<tbody id="out"></tbody>
-</table></div>
-<p class="verdict" id="verdict"></p>
-<p class="note">ReelShort math is exact for its published prices: 60 coins per standard episode, coin packs of $4.99 / $9.99 / $14.99 / $29.99 including bonus coins (snapshot 12 November 2026). DramaBox does not publish a per-episode coin price, so its coin row is an <strong>estimate</strong> ($0.38–$0.63 per episode, based on third-party checks of full-series coin costs) — treat it as a range, not a quote. Subscriptions auto-renew until cancelled; a weekly plan only saves money if you finish within the week. Free episodes at the start of a series (typically the first 5–15 on ReelShort) are not deducted here.</p>
+<h2>What does it cost to finish a series?</h2>
+<p class="sub">Coin packs feel cheap per episode; the bill lands around episode 40. This calculator prices a full series run — coins versus subscription — from each app's real published prices.</p>
+<section>
+<style>
+.cx{--cxdim:rgba(242,237,228,.62)}
+.cx-apps{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px}
+.cx-app{appearance:none;border:1px solid var(--line2);background:var(--surface2);color:var(--ink);font:inherit;font-weight:650;padding:10px 18px;border-radius:999px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 2px 0 rgba(0,0,0,.45);transition:transform .15s ease-out,background .15s ease-out,border-color .15s ease-out;min-height:44px}
+.cx-app:active{transform:translateY(1px)}
+.cx-app.is-on{background:var(--accent);border-color:var(--accent);color:#fff}
+.cx-epsrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:16px}
+.cx-epslabel{font-weight:650}
+.cx-epsnum{font-size:40px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.cx-epsunit{font-size:14px;color:var(--cxdim);margin-left:6px;font-weight:600}
+.cx-range{width:100%;margin:12px 0 2px;appearance:none;-webkit-appearance:none;height:32px;background:transparent;cursor:pointer}
+.cx-range::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:var(--surface2);border:1px solid var(--line)}
+.cx-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--accent);margin-top:-11px;border:2px solid rgba(255,255,255,.25);box-shadow:0 2px 8px rgba(0,0,0,.5);transition:transform .15s ease-out}
+.cx-range:active::-webkit-slider-thumb{transform:scale(1.18)}
+.cx-range::-moz-range-track{height:6px;border-radius:3px;background:var(--surface2);border:1px solid var(--line)}
+.cx-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--accent);border:2px solid rgba(255,255,255,.25);box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.cx-range:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cx-direct{display:flex;align-items:center;gap:10px;margin-top:4px}
+.cx-direct label{font-size:14px;color:var(--cxdim);font-weight:600}
+.cx-direct input{width:110px;padding:9px 10px;border:1px solid var(--line2);border-radius:12px;font-size:16px;background:var(--bg);color:var(--ink);font-variant-numeric:tabular-nums}
+.cx-rows{margin-top:16px;border-top:1px solid var(--line)}
+.cx-row{display:flex;align-items:center;gap:10px;padding:13px 2px;border-bottom:1px solid var(--line)}
+.cx-rname{flex:1;font-weight:600}
+.cx-est{font-size:11px;color:var(--cxdim);border:1px solid var(--line2);border-radius:6px;padding:1px 6px;margin-left:8px;font-weight:700;letter-spacing:.06em;vertical-align:2px}
+.cx-ramt{font-size:21px;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cx-best{display:none;font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--accent);white-space:nowrap}
+.cx-row.is-best .cx-best{display:inline}
+.cx-row.is-best .cx-ramt{color:var(--accent)}
+.cx-bar{margin-top:20px}
+.cx-track{position:relative;height:10px;border-radius:5px;background:var(--surface2);border:1px solid var(--line)}
+.cx-band{position:absolute;top:0;bottom:0;background:rgba(255,59,85,.30);border-radius:5px;transition:left .55s cubic-bezier(.3,1.35,.4,1),width .55s cubic-bezier(.3,1.35,.4,1)}
+.cx-fill{position:absolute;left:0;top:0;bottom:0;width:100%;border-radius:5px;background:var(--accent);transform-origin:left center;transform:scaleX(0);transition:transform .55s cubic-bezier(.3,1.35,.4,1)}
+.cx-eq{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.85}
+.cx-eq span{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--cxdim);white-space:nowrap;font-weight:700;letter-spacing:.05em}
+.cx-barcap{margin:26px 0 0;font-size:14px;color:var(--cxdim)}
+.cx-verdict{margin:12px 0 0;font-size:17px;font-weight:700}
+.cx-flip{animation:cxIn .25s ease-out}
+@keyframes cxIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.cx *{transition:none!important;animation:none!important}}
+</style>
+<div class="panel cx">
+<div class="cx-apps" role="group" aria-label="Choose a platform"><button type="button" class="cx-app is-on" data-k="reelshort">ReelShort</button><button type="button" class="cx-app" data-k="dramabox">DramaBox</button></div>
+<div class="cx-epsrow"><span class="cx-epslabel">Episodes</span><span class="cx-epsnum"><span id="cxNum">80</span><span class="cx-epsunit">episodes</span></span></div>
+<input class="cx-range" type="range" id="cxRange" min="10" max="200" step="1" value="80" aria-label="Episodes">
+<div class="cx-direct"><label for="cxNumIn">Exact count</label><input type="number" id="cxNumIn" min="1" max="500" value="80" inputmode="numeric"></div>
+<div class="cx-rows" id="cxRows"></div>
+<div class="cx-bar"><div class="cx-track"><div class="cx-band" id="cxBand"></div><div class="cx-fill" id="cxFill"></div><div class="cx-eq" id="cxEq"><span>SAME PRICE</span></div></div>
+<p class="cx-barcap" id="cxBarCap"></p></div>
+<p class="cx-verdict" id="cxVerdict"></p>
+<p class="note" style="margin-bottom:0">ReelShort coin math uses the app’s real packs (60 coins per episode, bonus coins counted). DramaBox does not publish a per-episode coin price — its coin row is an estimate ($0.38–$0.63 per episode), marked as such.</p>
 </div>
+<script>
+(function(){
+var DATA={"apps":[{"key":"reelshort","label":"ReelShort","mode":"packs","est":false,"coinName":"Coins (cheapest pack mix)","coinsPerEp":60,"packs":[{"total":500,"price":4.99},{"total":1150,"price":9.99},{"total":1800,"price":14.99},{"total":3750,"price":29.99}],"passes":[{"key":"weekly","label":"One-week subscription","price":19.99},{"key":"annual","label":"Annual subscription","price":199}]},{"key":"dramabox","label":"DramaBox","mode":"est","est":true,"coinName":"Coins","estLow":0.38,"estHigh":0.63,"passes":[{"key":"weekly","label":"One-week subscription","price":5.99},{"key":"annual","label":"Annual subscription","price":49.99}]}]}, FMT='usd', STR={"appLabel":"Choose a platform","eps":"Episodes","epsUnit":"episodes","exact":"Exact count","best":"[ BEST ]","est":"ESTIMATE","equal":"SAME PRICE","be":"Break-even ≈ {be} episodes — past that, {pass} is cheaper.","beEst":"Break-even ≈ {be1}–{be2} episodes — past that, {pass} is cheaper.","beNone":"Coins stay cheaper than {pass} at every length up to 500 episodes.","verdict":"Cheapest: {name} — saves {save} vs the priciest option."};
+function byId(id){return document.getElementById(id);}
+function fmt(n){ n=Math.round(n*100)/100; if(FMT==='jpy'){ return '\u00a5'+Math.round(n).toLocaleString('ja-JP'); } return '$'+(n%1===0? String(n) : n.toFixed(2)); }
+function packCost(app, eps){ var need=eps*app.coinsPerEp, cost=0; var packs=app.packs.slice().sort(function(a,b){return b.total-a.total;}); for(var i=0;i<packs.length;i++){ var p=packs[i]; while(need>=p.total){ need-=p.total; cost+=p.price; } } if(need>0){ var cover=app.packs.slice().sort(function(a,b){return a.price-b.price;}).filter(function(p){return p.total>=need;})[0] || app.packs[app.packs.length-1]; cost+=cover.price; } return Math.round(cost*100)/100; }
+function coinCost(app, eps){ if(app.mode==='packs'){ var c=packCost(app, eps); return {low:c, mid:c, high:c}; } if(app.mode==='est'){ return {low:eps*app.estLow, mid:eps*(app.estLow+app.estHigh)/2, high:eps*app.estHigh}; } var c2=eps*app.perEp; return {low:c2, mid:c2, high:c2}; }
+function breakEven(app){ var p=app.passes[0].price; for(var e=1;e<=500;e++){ if(coinCost(app, e).mid>=p) return e; } return null; }
+var app=DATA.apps[0], epsT=80, epsC=80, amt={low:0, mid:0, high:0}, rafId=null;
+var reduce=!!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+var rowsEl=byId('cxRows'), rowRefs={};
+function buildRows(){ rowsEl.innerHTML=''; rowRefs={}; var defs=[{key:'coin', name:app.coinName, est:!!app.est}].concat(app.passes.map(function(p){return {key:p.key, name:p.label, est:false};})); defs.forEach(function(dfn){ var row=document.createElement('div'); row.className='cx-row'; var nm=document.createElement('span'); nm.className='cx-rname'; nm.textContent=dfn.name; if(dfn.est){ var tag=document.createElement('span'); tag.className='cx-est'; tag.textContent=STR.est; nm.appendChild(tag); } var am=document.createElement('span'); am.className='cx-ramt'; var bs=document.createElement('span'); bs.className='cx-best'; bs.textContent=STR.best; row.appendChild(nm); row.appendChild(am); row.appendChild(bs); rowsEl.appendChild(row); rowRefs[dfn.key]={row:row, amt:am}; }); rowsEl.classList.remove('cx-flip'); void rowsEl.offsetWidth; rowsEl.classList.add('cx-flip'); }
+function render(){ byId('cxNum').textContent=Math.round(epsC); var t=coinCost(app, epsT); if(rowRefs.coin) rowRefs.coin.amt.textContent = app.mode==='est' ? (fmt(amt.low)+' \u2013 '+fmt(amt.high)) : fmt(amt.mid); app.passes.forEach(function(p){ if(rowRefs[p.key]) rowRefs[p.key].amt.textContent=fmt(p.price); }); var opts=[{key:'coin', name:app.coinName, v:t.mid}].concat(app.passes.map(function(p){return {key:p.key, name:p.label, v:p.price};})); var best=opts[0]; opts.forEach(function(o){ if(o.v<best.v) best=o; }); opts.forEach(function(o){ rowRefs[o.key].row.classList.toggle('is-best', o.key===best.key); }); var maxV=0; opts.forEach(function(o){ if(o.v>maxV) maxV=o.v; }); byId('cxVerdict').textContent=STR.verdict.replace('{name}', best.name).replace('{save}', fmt(maxV-best.v)); var p0=app.passes[0], scale=1.5; byId('cxFill').style.transform='scaleX('+(Math.max(0, Math.min(t.mid/p0.price, scale))/scale)+')'; var band=byId('cxBand'); if(app.mode==='est'){ band.style.display='block'; band.style.left=((t.low/p0.price)/scale*100)+'%'; band.style.width=(((t.high-t.low)/p0.price)/scale*100)+'%'; } else { band.style.display='none'; } byId('cxEq').style.left=(100/scale)+'%'; var cap; if(app.mode==='est'){ cap=STR.beEst.replace('{be1}', Math.ceil(p0.price/app.estHigh)).replace('{be2}', Math.ceil(p0.price/app.estLow)).replace('{pass}', p0.label); } else { var be=breakEven(app); cap=be ? STR.be.replace('{be}', be).replace('{pass}', p0.label) : STR.beNone.replace('{pass}', p0.label); } byId('cxBarCap').textContent=cap; }
+function snap(){ var t=coinCost(app, epsT); amt={low:t.low, mid:t.mid, high:t.high}; epsC=epsT; render(); }
+function tick(){ var t=coinCost(app, epsT), f=0.22; epsC+=(epsT-epsC)*f; amt.low+=(t.low-amt.low)*f; amt.mid+=(t.mid-amt.mid)*f; amt.high+=(t.high-amt.high)*f; var done=Math.abs(epsT-epsC)<0.4 && Math.abs(t.mid-amt.mid)<0.03 && Math.abs(t.low-amt.low)<0.03 && Math.abs(t.high-amt.high)<0.03; if(done){ snap(); rafId=null; return; } render(); rafId=requestAnimationFrame(tick); }
+function kick(){ if(reduce){ snap(); return; } if(!rafId) rafId=requestAnimationFrame(tick); }
+byId('cxRange').addEventListener('input', function(){ epsT=parseInt(this.value, 10)||80; byId('cxNumIn').value=epsT; kick(); });
+byId('cxNumIn').addEventListener('input', function(){ var v=parseInt(this.value, 10); if(isNaN(v)) return; epsT=Math.max(1, Math.min(500, v)); byId('cxRange').value=Math.min(epsT, 200); kick(); });
+Array.prototype.forEach.call(document.querySelectorAll('.cx-app'), function(b){ b.addEventListener('click', function(){ Array.prototype.forEach.call(document.querySelectorAll('.cx-app'), function(x){ x.classList.remove('is-on'); }); b.classList.add('is-on'); var k=b.getAttribute('data-k'); DATA.apps.forEach(function(a){ if(a.key===k) app=a; }); buildRows(); snap(); }); });
+buildRows(); snap();
+})();
+</script>
+</section>
 </section>
 <section>
-<h2>Why this matters</h2>
 <div class="panel">
-<p>On ReelShort, an 80-episode series costs $44.96 in coins but $19.99 on a one-week subscription. The break-even point is around 40 episodes: shorter series are cheaper in coins, longer ones are cheaper by subscription. On DramaBox the same logic applies at lower prices — its weekly plan is $5.99. The full side-by-side is on the <a href="/compare/reelshort-vs-dramabox/">ReelShort vs DramaBox page</a>.</p>
+<h2>Why this matters</h2>
+<p>An 80-episode ReelShort series costs $44.96 in coins but $19.99 on a one-week subscription — the subscription pays for itself at around 40 episodes. DramaBox runs the same play at lower prices (weekly $5.99). The full side-by-side is in <a href="/compare/reelshort-vs-dramabox/">ReelShort vs DramaBox</a>.</p>
+<details class="gate"><summary>Where the prices come from</summary>
+<p><strong>ReelShort:</strong> coin packs and subscriptions from the app's paywall (researched October 2026). 60 coins unlock one episode; the coin total above uses the cheapest pack combination for the episodes chosen, bonus coins counted.</p>
+<p><strong>DramaBox:</strong> the per-episode coin price is not published anywhere official we could verify, so the coin row shows an estimate range ($0.38–$0.63 per episode) instead of an invented point figure. Subscription prices are the app's published rates.</p>
+</details>
 </div>
 </section>
 </main>
-<script>
-var DATA = {"reelshort":{"coinsPerEp":60,"packs":[{"bonus":0,"coins":500,"usd":4.99},{"bonus":150,"coins":1000,"usd":9.99},{"bonus":300,"coins":1500,"usd":14.99},{"bonus":750,"coins":3000,"usd":29.99}],"weekly":19.99,"annual":199},"dramabox":{"estLow":0.38,"estHigh":0.63,"weekly":5.99,"annual":49.99}};
-function rsCoinCost(eps){
-  var need = eps * DATA.reelshort.coinsPerEp, cost = 0;
-  var packs = DATA.reelshort.packs.slice().sort(function(a,b){return (b.coins+b.bonus)-(a.coins+a.bonus);});
-  for (var i=0;i<packs.length;i++){ var p=packs[i];
-    while (need >= p.coins + p.bonus){ need -= (p.coins+p.bonus); cost += p.usd; } }
-  if (need > 0){
-    var byPrice = DATA.reelshort.packs.slice().sort(function(a,b){return a.usd-b.usd;});
-    var cover = null;
-    for (var j=0;j<byPrice.length;j++){ if (byPrice[j].coins+byPrice[j].bonus >= need){ cover = byPrice[j]; break; } }
-    if (!cover) cover = byPrice[byPrice.length-1];
-    cost += cover.usd;
-  }
-  return Math.round(cost*100)/100;
-}
-function money(n){ return '$' + (n % 1 === 0 ? String(n) : n.toFixed(2)); }
-function render(){
-  var app = document.getElementById('app').value;
-  var eps = parseInt(document.getElementById('eps').value, 10);
-  if (!(eps >= 1)) eps = 1;
-  if (eps > 500) eps = 500;
-  document.getElementById('epsRange').value = Math.min(eps, 200);
-  var rows = '', verdict = '';
-  if (app === 'reelshort'){
-    var coin = rsCoinCost(eps), w = DATA.reelshort.weekly, a = DATA.reelshort.annual;
-    rows = '<tr><td>Coins (' + eps + ' episodes × 60 coins)</td><td>' + money(coin) + '</td></tr>'
-      + '<tr><td>One-week subscription</td><td>' + money(w) + '</td></tr>'
-      + '<tr><td>Annual subscription</td><td>' + money(a) + '</td></tr>';
-    if (coin < w) verdict = 'Cheapest: buy coins — ' + money(coin) + '. The weekly subscription would cost ' + money(w - coin) + ' more.';
-    else verdict = 'Cheapest: the one-week subscription at ' + money(w) + ' — it saves ' + money(coin - w) + ' over coins for this series.';
-  } else {
-    var low = Math.round(eps * DATA.dramabox.estLow * 100)/100;
-    var high = Math.round(eps * DATA.dramabox.estHigh * 100)/100;
-    var w2 = DATA.dramabox.weekly, a2 = DATA.dramabox.annual;
-    rows = '<tr><td>Coins (estimate — DramaBox does not publish a per-episode price)</td><td>' + money(low) + ' – ' + money(high) + '</td></tr>'
-      + '<tr><td>One-week subscription</td><td>' + money(w2) + '</td></tr>'
-      + '<tr><td>Annual subscription</td><td>' + money(a2) + '</td></tr>';
-    if (low > w2) verdict = 'Cheapest: the one-week subscription at ' + money(w2) + ' — cheaper than even the low end of the coin estimate.';
-    else if (high < w2) verdict = 'Cheapest: probably coins, estimated ' + money(low) + ' – ' + money(high) + ' for this series.';
-    else verdict = 'Too close to call on estimates — the one-week subscription (' + money(w2) + ') is the predictable price; the coin cost is an estimate and could land either side of it.';
-  }
-  document.getElementById('out').innerHTML = rows;
-  document.getElementById('verdict').textContent = verdict;
-}
-document.getElementById('app').addEventListener('change', render);
-document.getElementById('eps').addEventListener('input', render);
-document.getElementById('epsRange').addEventListener('input', function(){
-  document.getElementById('eps').value = this.value; render();
-});
-render();
-</script>
 <footer class="site"><div class="wrap">
 <p>DramaFinish is an independent guide. It is not affiliated with ReelShort, DramaBox or any other app listed here.
 Prices and ratings are snapshots (apps: 12 November 2026; pricing: 12 November 2026) and change over time — always check the app before paying.

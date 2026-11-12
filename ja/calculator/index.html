@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a0a0c">
-<title>ショートドラマ完走コスト計算（円）— コイン vs サブスク、出典付き | DramaFinish</title>
-<meta name="description" content="話数を入れると、DramaBoxとBUMPで「コインで全話」と「週額・月額サブスク」のどちらが安いかを円で比較。コイン換算は推定と明示し、価格は全件出典付き。">
+<title>ショートドラマの完走コスト計算（円） — コイン vs 見放題プラン | DramaFinish</title>
+<meta name="description" content="DramaBoxとBUMPで、コイン購入と週額・月額プランの総額を円で比較。価格はすべて出典付きの実測値、推定値は明示。">
 <link rel="canonical" href="https://drama.yuzucalc.com/ja/calculator/">
 <link rel="alternate" hreflang="en" href="https://drama.yuzucalc.com/calculator/">
 <link rel="alternate" hreflang="ja" href="https://drama.yuzucalc.com/ja/calculator/">
 <link rel="alternate" hreflang="x-default" href="https://drama.yuzucalc.com/calculator/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="DramaFinish">
-<meta property="og:title" content="ショートドラマ完走コスト計算（円）— コイン vs サブスク、出典付き | DramaFinish">
-<meta property="og:description" content="話数を入れると、DramaBoxとBUMPで「コインで全話」と「週額・月額サブスク」のどちらが安いかを円で比較。コイン換算は推定と明示し、価格は全件出典付き。">
+<meta property="og:title" content="ショートドラマの完走コスト計算（円） — コイン vs 見放題プラン | DramaFinish">
+<meta property="og:description" content="DramaBoxとBUMPで、コイン購入と週額・月額プランの総額を円で比較。価格はすべて出典付きの実測値、推定値は明示。">
 <meta property="og:url" content="https://drama.yuzucalc.com/ja/calculator/">
 <meta property="og:locale" content="ja_JP">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -42,60 +42,106 @@
 <main class="wrap">
 <p class="crumb"><a href="/ja/">トップ</a> / 料金計算</p>
 <section>
+<p class="kicker">料金計算 — 円建て・出典付き</p>
 <h2>完走コスト計算（円）</h2>
-<p class="sub">話数とアプリを選ぶと、コインで払う場合とサブスクリプションの場合を比べます。価格はすべて出典付きの実測値で、換算値は「推定」と明示します。</p>
-<div class="panel calc">
-<label for="appJa">アプリ</label>
-<select id="appJa">
-<option value="dramabox">DramaBox</option>
-<option value="bump">BUMP</option>
-</select>
-<label for="epsJa">シリーズの話数</label>
-<input type="number" id="epsJa" min="1" max="500" value="60">
-<div class="tablebox" style="margin-top:20px"><table>
-<tr><th>払い方</th><th>合計</th></tr>
-<tbody id="outJa"></tbody>
-</table></div>
-<p class="verdict" id="verdictJa"></p>
-<p class="note">DramaBoxはコインの単話価格を公式に公表していません。そのためコイン行は、出典のある実測（1話50コイン／300コイン ¥410のパック、出典：ドラマの箱 (kdrama-info.site)）からの<strong>推定</strong>です。公式価格として扱わないでください。サブスクリプションは自動更新です。週額プランが得になるのは、期間内に完走した場合だけです。</p>
-</div>
-</section>
+<p class="sub">コインで1話ずつ買う場合と、週額・月額の見放題プランで観る場合の総額を比べます。使っている価格はすべて出典のある実測値で、推定値は推定と明示します。</p>
 <section>
-<h2>計算に使った価格の出典</h2>
-<h3>DramaBox</h3>
-<div class="tablebox"><table><tr><th>項目</th><th>価格（円）</th><th>出典</th></tr><tr><td>Subscription Weekly（週額サブスク）</td><td>¥1,500</td><td>ショートドラマJP — App Store（日本）表示上位10項目、2026年10月7日時点</td></tr><tr><td>Monthly subscription（月額サブスク）</td><td>¥6,000</td><td>ショートドラマJP — App Store（日本）表示上位10項目、2026年10月7日時点</td></tr><tr><td>コイン 300コイン / 700+70コイン / 1,300+300コイン / 2,500+1,000コイン</td><td>¥410 / ¥1,060 / ¥1,960 / ¥3,760（1話50コイン）</td><td>ドラマの箱 (kdrama-info.site)</td></tr><tr><td>VIP会員 週会員 / 年会員（別時点の実利用レビュー価格、上記ストア表示とは異なる）</td><td>週 ¥2,040 / 年 ¥18,000</td><td>ドラマの箱 (kdrama-info.site)</td></tr><tr><td>見放題プラン 週額 / 年額（別ガイド・別時点）</td><td>週 ¥2,000（最初の3週間のみ週 ¥1,350） / 年 ¥20,000</td><td>アプリオ (appllio.com) ショートドラマアプリ徹底比較</td></tr><tr><td>コインチャージ 300/770/1600/3500コイン（アプリオ実測）</td><td>¥500 / ¥1,100 / ¥2,000 / ¥4,000</td><td>アプリオ (appllio.com)</td></tr></table></div>
-<h3 style="margin-top:20px">BUMP</h3>
-<div class="tablebox"><table><tr><th>項目</th><th>価格（円）</th><th>出典</th></tr><tr><td>有料エピソード 1話（税込）</td><td>¥97／話（97コイン、1コイン＝1円）</td><td>PR TIMES（emole公式発表の転載）／アプリオ</td></tr><tr><td>見放題プラン 週額（通常価格／初週価格）</td><td>通常 週 ¥2,980（初週 ¥1,480）</td><td>アプリオ (appllio.com) ※同記事の比較表注記: 見放題プランは『割引前の通常価格を記載』</td></tr><tr><td>見放題プラン 月額（通常価格／初月価格）</td><td>通常 月 ¥3,980（初月 ¥1,980）</td><td>アプリオ (appllio.com)</td></tr><tr><td>コインチャージ 480/800/1240/2900/4170/6930/13500コイン</td><td>¥480 / ¥800 / ¥1,240 / ¥2,800 / ¥4,000 / ¥6,600 / ¥12,800</td><td>アプリオ (appllio.com) 料金体系表</td></tr><tr><td>App Store（日本）アプリ内課金表示範囲</td><td>¥160〜¥4,000（コイン（待てば無料）＋プレミアム（週額・月額））</td><td>ショートドラマJP 日本発アプリ表、2026年10月7日時点</td></tr></table></div>
-<p class="note">同じアプリでも媒体・時点で価格が異なる場合があるため、計算には出典を明示した上で代表的な実測値を使い、出典表では全件を併記しています。</p>
-</section>
-</main>
+<style>
+.cx{--cxdim:rgba(242,237,228,.62)}
+.cx-apps{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 4px}
+.cx-app{appearance:none;border:1px solid var(--line2);background:var(--surface2);color:var(--ink);font:inherit;font-weight:650;padding:10px 18px;border-radius:999px;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 2px 0 rgba(0,0,0,.45);transition:transform .15s ease-out,background .15s ease-out,border-color .15s ease-out;min-height:44px}
+.cx-app:active{transform:translateY(1px)}
+.cx-app.is-on{background:var(--accent);border-color:var(--accent);color:#fff}
+.cx-epsrow{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:16px}
+.cx-epslabel{font-weight:650}
+.cx-epsnum{font-size:40px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.cx-epsunit{font-size:14px;color:var(--cxdim);margin-left:6px;font-weight:600}
+.cx-range{width:100%;margin:12px 0 2px;appearance:none;-webkit-appearance:none;height:32px;background:transparent;cursor:pointer}
+.cx-range::-webkit-slider-runnable-track{height:6px;border-radius:3px;background:var(--surface2);border:1px solid var(--line)}
+.cx-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:var(--accent);margin-top:-11px;border:2px solid rgba(255,255,255,.25);box-shadow:0 2px 8px rgba(0,0,0,.5);transition:transform .15s ease-out}
+.cx-range:active::-webkit-slider-thumb{transform:scale(1.18)}
+.cx-range::-moz-range-track{height:6px;border-radius:3px;background:var(--surface2);border:1px solid var(--line)}
+.cx-range::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--accent);border:2px solid rgba(255,255,255,.25);box-shadow:0 2px 8px rgba(0,0,0,.5)}
+.cx-range:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cx-direct{display:flex;align-items:center;gap:10px;margin-top:4px}
+.cx-direct label{font-size:14px;color:var(--cxdim);font-weight:600}
+.cx-direct input{width:110px;padding:9px 10px;border:1px solid var(--line2);border-radius:12px;font-size:16px;background:var(--bg);color:var(--ink);font-variant-numeric:tabular-nums}
+.cx-rows{margin-top:16px;border-top:1px solid var(--line)}
+.cx-row{display:flex;align-items:center;gap:10px;padding:13px 2px;border-bottom:1px solid var(--line)}
+.cx-rname{flex:1;font-weight:600}
+.cx-est{font-size:11px;color:var(--cxdim);border:1px solid var(--line2);border-radius:6px;padding:1px 6px;margin-left:8px;font-weight:700;letter-spacing:.06em;vertical-align:2px}
+.cx-ramt{font-size:21px;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap}
+.cx-best{display:none;font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--accent);white-space:nowrap}
+.cx-row.is-best .cx-best{display:inline}
+.cx-row.is-best .cx-ramt{color:var(--accent)}
+.cx-bar{margin-top:20px}
+.cx-track{position:relative;height:10px;border-radius:5px;background:var(--surface2);border:1px solid var(--line)}
+.cx-band{position:absolute;top:0;bottom:0;background:rgba(255,59,85,.30);border-radius:5px;transition:left .55s cubic-bezier(.3,1.35,.4,1),width .55s cubic-bezier(.3,1.35,.4,1)}
+.cx-fill{position:absolute;left:0;top:0;bottom:0;width:100%;border-radius:5px;background:var(--accent);transform-origin:left center;transform:scaleX(0);transition:transform .55s cubic-bezier(.3,1.35,.4,1)}
+.cx-eq{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);opacity:.85}
+.cx-eq span{position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:11px;color:var(--cxdim);white-space:nowrap;font-weight:700;letter-spacing:.05em}
+.cx-barcap{margin:26px 0 0;font-size:14px;color:var(--cxdim)}
+.cx-verdict{margin:12px 0 0;font-size:17px;font-weight:700}
+.cx-flip{animation:cxIn .25s ease-out}
+@keyframes cxIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){.cx *{transition:none!important;animation:none!important}}
+</style>
+<div class="panel cx">
+<div class="cx-apps" role="group" aria-label="アプリを選ぶ"><button type="button" class="cx-app is-on" data-k="dramabox">DramaBox</button><button type="button" class="cx-app" data-k="bump">BUMP</button></div>
+<div class="cx-epsrow"><span class="cx-epslabel">話数</span><span class="cx-epsnum"><span id="cxNum">80</span><span class="cx-epsunit">話</span></span></div>
+<input class="cx-range" type="range" id="cxRange" min="10" max="200" step="1" value="80" aria-label="話数">
+<div class="cx-direct"><label for="cxNumIn">正確な話数</label><input type="number" id="cxNumIn" min="1" max="500" value="80" inputmode="numeric"></div>
+<div class="cx-rows" id="cxRows"></div>
+<div class="cx-bar"><div class="cx-track"><div class="cx-band" id="cxBand"></div><div class="cx-fill" id="cxFill"></div><div class="cx-eq" id="cxEq"><span>同額</span></div></div>
+<p class="cx-barcap" id="cxBarCap"></p></div>
+<p class="cx-verdict" id="cxVerdict"></p>
+<p class="note" style="margin-bottom:0">DramaBoxのコイン単話価格は公式未公表のため推定です（1話50コイン、300コインパック¥410からの換算）。BUMPの話売り価格は出典付きの実測値です。</p>
+</div>
 <script>
-var DATA = {"dramabox":{"weekly":1500,"monthly":6000,"estPerEp":68.3},"bump":{"perEp":97}};
-function yen(n){ return '¥' + Math.round(n).toLocaleString('ja-JP'); }
-function renderJa(){
-  var app = document.getElementById('appJa').value;
-  var eps = parseInt(document.getElementById('epsJa').value, 10);
-  if (!(eps >= 1)) eps = 1; if (eps > 500) eps = 500;
-  var rows = '', verdict = '';
-  if (app === 'dramabox'){
-    var est = DATA.dramabox.estPerEp ? Math.round(eps * DATA.dramabox.estPerEp) : null;
-    if (est != null) rows += '<tr><td>コイン（推定 — 1話50コイン×最安パック単価で換算）</td><td>約 ' + yen(est) + '</td></tr>';
-    if (DATA.dramabox.weekly) rows += '<tr><td>週額サブスクリプション</td><td>' + yen(DATA.dramabox.weekly) + '</td></tr>';
-    if (DATA.dramabox.monthly) rows += '<tr><td>月額サブスクリプション</td><td>' + yen(DATA.dramabox.monthly) + '</td></tr>';
-    if (est != null && DATA.dramabox.weekly) verdict = est <= DATA.dramabox.weekly ? '目安：この話数ならコイン（推定）の方が安い計算です。' : '目安：週額サブスクリプションの方が安い計算です（1週間で見終える場合）。';
-  } else {
-    var coin = DATA.bump.perEp ? eps * DATA.bump.perEp : null;
-    if (coin != null) rows += '<tr><td>1話ごとの課金（¥97／話）</td><td>' + yen(coin) + '</td></tr>';
-    rows += '<tr><td>見放題プラン</td><td>週額・月額は下の出典表をご覧ください（初回価格と通常価格が併記されています）</td></tr>';
-    verdict = coin != null ? '目安：話数が多いほど見放題プランが有利になります。正確な比較は出典表の価格でご確認ください。' : '';
-  }
-  document.getElementById('outJa').innerHTML = rows;
-  document.getElementById('verdictJa').textContent = verdict;
-}
-document.getElementById('appJa').addEventListener('change', renderJa);
-document.getElementById('epsJa').addEventListener('input', renderJa);
-renderJa();
+(function(){
+var DATA={"apps":[{"key":"dramabox","label":"DramaBox","mode":"per","est":true,"coinName":"コイン（推定）","perEp":68.33,"passes":[{"key":"weekly","label":"週額サブスク","price":1500},{"key":"monthly","label":"月額サブスク","price":6000}]},{"key":"bump","label":"BUMP","mode":"per","est":false,"coinName":"話売り（1話ごと）","perEp":97,"passes":[{"key":"weekly","label":"見放題プラン 週額","price":2980},{"key":"monthly","label":"見放題プラン 月額","price":3980}]}]}, FMT='jpy', STR={"appLabel":"アプリを選ぶ","eps":"話数","epsUnit":"話","exact":"正確な話数","best":"[ 最安 ]","est":"推定","equal":"同額","be":"損益分岐は約{be}話 — それより長い作品は{pass}の方が安くなります。","beEst":"損益分岐は約{be1}〜{be2}話 — それより長い作品は{pass}の方が安くなります。","beNone":"500話までなら、コインの方が{pass}より安くなります。","verdict":"最安は{name} — 最も高い選択肢より{save}安くなります。"};
+function byId(id){return document.getElementById(id);}
+function fmt(n){ n=Math.round(n*100)/100; if(FMT==='jpy'){ return '\u00a5'+Math.round(n).toLocaleString('ja-JP'); } return '$'+(n%1===0? String(n) : n.toFixed(2)); }
+function packCost(app, eps){ var need=eps*app.coinsPerEp, cost=0; var packs=app.packs.slice().sort(function(a,b){return b.total-a.total;}); for(var i=0;i<packs.length;i++){ var p=packs[i]; while(need>=p.total){ need-=p.total; cost+=p.price; } } if(need>0){ var cover=app.packs.slice().sort(function(a,b){return a.price-b.price;}).filter(function(p){return p.total>=need;})[0] || app.packs[app.packs.length-1]; cost+=cover.price; } return Math.round(cost*100)/100; }
+function coinCost(app, eps){ if(app.mode==='packs'){ var c=packCost(app, eps); return {low:c, mid:c, high:c}; } if(app.mode==='est'){ return {low:eps*app.estLow, mid:eps*(app.estLow+app.estHigh)/2, high:eps*app.estHigh}; } var c2=eps*app.perEp; return {low:c2, mid:c2, high:c2}; }
+function breakEven(app){ var p=app.passes[0].price; for(var e=1;e<=500;e++){ if(coinCost(app, e).mid>=p) return e; } return null; }
+var app=DATA.apps[0], epsT=80, epsC=80, amt={low:0, mid:0, high:0}, rafId=null;
+var reduce=!!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+var rowsEl=byId('cxRows'), rowRefs={};
+function buildRows(){ rowsEl.innerHTML=''; rowRefs={}; var defs=[{key:'coin', name:app.coinName, est:!!app.est}].concat(app.passes.map(function(p){return {key:p.key, name:p.label, est:false};})); defs.forEach(function(dfn){ var row=document.createElement('div'); row.className='cx-row'; var nm=document.createElement('span'); nm.className='cx-rname'; nm.textContent=dfn.name; if(dfn.est){ var tag=document.createElement('span'); tag.className='cx-est'; tag.textContent=STR.est; nm.appendChild(tag); } var am=document.createElement('span'); am.className='cx-ramt'; var bs=document.createElement('span'); bs.className='cx-best'; bs.textContent=STR.best; row.appendChild(nm); row.appendChild(am); row.appendChild(bs); rowsEl.appendChild(row); rowRefs[dfn.key]={row:row, amt:am}; }); rowsEl.classList.remove('cx-flip'); void rowsEl.offsetWidth; rowsEl.classList.add('cx-flip'); }
+function render(){ byId('cxNum').textContent=Math.round(epsC); var t=coinCost(app, epsT); if(rowRefs.coin) rowRefs.coin.amt.textContent = app.mode==='est' ? (fmt(amt.low)+' \u2013 '+fmt(amt.high)) : fmt(amt.mid); app.passes.forEach(function(p){ if(rowRefs[p.key]) rowRefs[p.key].amt.textContent=fmt(p.price); }); var opts=[{key:'coin', name:app.coinName, v:t.mid}].concat(app.passes.map(function(p){return {key:p.key, name:p.label, v:p.price};})); var best=opts[0]; opts.forEach(function(o){ if(o.v<best.v) best=o; }); opts.forEach(function(o){ rowRefs[o.key].row.classList.toggle('is-best', o.key===best.key); }); var maxV=0; opts.forEach(function(o){ if(o.v>maxV) maxV=o.v; }); byId('cxVerdict').textContent=STR.verdict.replace('{name}', best.name).replace('{save}', fmt(maxV-best.v)); var p0=app.passes[0], scale=1.5; byId('cxFill').style.transform='scaleX('+(Math.max(0, Math.min(t.mid/p0.price, scale))/scale)+')'; var band=byId('cxBand'); if(app.mode==='est'){ band.style.display='block'; band.style.left=((t.low/p0.price)/scale*100)+'%'; band.style.width=(((t.high-t.low)/p0.price)/scale*100)+'%'; } else { band.style.display='none'; } byId('cxEq').style.left=(100/scale)+'%'; var cap; if(app.mode==='est'){ cap=STR.beEst.replace('{be1}', Math.ceil(p0.price/app.estHigh)).replace('{be2}', Math.ceil(p0.price/app.estLow)).replace('{pass}', p0.label); } else { var be=breakEven(app); cap=be ? STR.be.replace('{be}', be).replace('{pass}', p0.label) : STR.beNone.replace('{pass}', p0.label); } byId('cxBarCap').textContent=cap; }
+function snap(){ var t=coinCost(app, epsT); amt={low:t.low, mid:t.mid, high:t.high}; epsC=epsT; render(); }
+function tick(){ var t=coinCost(app, epsT), f=0.22; epsC+=(epsT-epsC)*f; amt.low+=(t.low-amt.low)*f; amt.mid+=(t.mid-amt.mid)*f; amt.high+=(t.high-amt.high)*f; var done=Math.abs(epsT-epsC)<0.4 && Math.abs(t.mid-amt.mid)<0.03 && Math.abs(t.low-amt.low)<0.03 && Math.abs(t.high-amt.high)<0.03; if(done){ snap(); rafId=null; return; } render(); rafId=requestAnimationFrame(tick); }
+function kick(){ if(reduce){ snap(); return; } if(!rafId) rafId=requestAnimationFrame(tick); }
+byId('cxRange').addEventListener('input', function(){ epsT=parseInt(this.value, 10)||80; byId('cxNumIn').value=epsT; kick(); });
+byId('cxNumIn').addEventListener('input', function(){ var v=parseInt(this.value, 10); if(isNaN(v)) return; epsT=Math.max(1, Math.min(500, v)); byId('cxRange').value=Math.min(epsT, 200); kick(); });
+Array.prototype.forEach.call(document.querySelectorAll('.cx-app'), function(b){ b.addEventListener('click', function(){ Array.prototype.forEach.call(document.querySelectorAll('.cx-app'), function(x){ x.classList.remove('is-on'); }); b.classList.add('is-on'); var k=b.getAttribute('data-k'); DATA.apps.forEach(function(a){ if(a.key===k) app=a; }); buildRows(); snap(); }); });
+buildRows(); snap();
+})();
 </script>
+</section>
+</section>
+<section><details class="gate">
+<summary>価格の出典</summary>
+<h3>DramaBox</h3><div class="tablebox"><table>
+<tr><th>項目</th><th>価格（円）</th><th>出典</th></tr>
+<tr><td>Subscription Weekly（週額サブスク）</td><td>¥1,500</td><td>ショートドラマJP — App Store（日本）表示上位10項目、2026年10月7日時点</td></tr>
+<tr><td>Monthly subscription（月額サブスク）</td><td>¥6,000</td><td>ショートドラマJP — App Store（日本）表示上位10項目、2026年10月7日時点</td></tr>
+<tr><td>コイン 300コイン / 700+70コイン / 1,300+300コイン / 2,500+1,000コイン</td><td>¥410 / ¥1,060 / ¥1,960 / ¥3,760（1話50コイン）</td><td>ドラマの箱 (kdrama-info.site)</td></tr>
+<tr><td>VIP会員 週会員 / 年会員（別時点の実利用レビュー価格、上記ストア表示とは異なる）</td><td>週 ¥2,040 / 年 ¥18,000</td><td>ドラマの箱 (kdrama-info.site)</td></tr>
+<tr><td>見放題プラン 週額 / 年額（別ガイド・別時点）</td><td>週 ¥2,000（最初の3週間のみ週 ¥1,350） / 年 ¥20,000</td><td>アプリオ (appllio.com) ショートドラマアプリ徹底比較</td></tr>
+<tr><td>コインチャージ 300/770/1600/3500コイン（アプリオ実測）</td><td>¥500 / ¥1,100 / ¥2,000 / ¥4,000</td><td>アプリオ (appllio.com)</td></tr>
+</table></div>
+<h3>BUMP</h3><div class="tablebox"><table>
+<tr><th>項目</th><th>価格（円）</th><th>出典</th></tr>
+<tr><td>有料エピソード 1話（税込）</td><td>¥97／話（97コイン、1コイン＝1円）</td><td>PR TIMES（emole公式発表の転載）／アプリオ</td></tr>
+<tr><td>見放題プラン 週額（通常価格／初週価格）</td><td>通常 週 ¥2,980（初週 ¥1,480）</td><td>アプリオ (appllio.com) ※同記事の比較表注記: 見放題プランは『割引前の通常価格を記載』</td></tr>
+<tr><td>見放題プラン 月額（通常価格／初月価格）</td><td>通常 月 ¥3,980（初月 ¥1,980）</td><td>アプリオ (appllio.com)</td></tr>
+<tr><td>コインチャージ 480/800/1240/2900/4170/6930/13500コイン</td><td>¥480 / ¥800 / ¥1,240 / ¥2,800 / ¥4,000 / ¥6,600 / ¥12,800</td><td>アプリオ (appllio.com) 料金体系表</td></tr>
+<tr><td>App Store（日本）アプリ内課金表示範囲</td><td>¥160〜¥4,000（コイン（待てば無料）＋プレミアム（週額・月額））</td><td>ショートドラマJP 日本発アプリ表、2026年10月7日時点</td></tr>
+</table></div>
+</details></section>
+</main>
 <footer class="site"><div class="wrap">
 <p>DramaFinishは独立した情報ガイドです。ReelShort、DramaBox、その他掲載アプリの運営会社とは提携関係にありません（下記の広告提携を除く）。
 価格・評価は出典時点のスナップショット（アプリ実測：2026-11-12）で、変動します。支払い前に必ずアプリ内でご確認ください。</p>
