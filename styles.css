@@ -33,7 +33,7 @@ display:flex;flex-direction:column;gap:6px;height:100%}
 .card .m{color:var(--muted);font-size:14px}
 .card a{color:var(--ink)}
 table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--radius);overflow:hidden;font-size:15px}
-.tablebox{border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto}
+.tablebox{border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
 th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 th{background:#eef1f6}
 tr:last-child td{border-bottom:none}
@@ -85,4 +85,4 @@ details.gate summary:hover{color:var(--navy2)}
 .cta-row{margin-top:16px}
 @media (min-width:720px){.hero h1{font-size:42px}.grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}.hooktitle{font-size:35px}}
 @media (min-width:900px){.heroposter{width:180px}.herocard{padding:20px}.herotitle{font-size:20px}.spotgrid{grid-template-columns:1fr 1fr}}
-@media (max-width:899px){section{margin:0 0 24px}.panel{padding:18px}.herocard{padding:14px}.crumb{margin:14px 0 8px}}
+@media (max-width:899px){section{margin:0 0 24px}.panel{padding:18px}.herocard{padding:14px}.crumb{margin:14px 0 8px}.spotcard .hook{display:block;-webkit-line-clamp:none;overflow:visible}table{font-size:13.5px}th,td{padding:8px 8px}}
