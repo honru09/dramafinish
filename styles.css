@@ -170,7 +170,7 @@ padding:3px 12px;font-size:13px;font-weight:700}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,.chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 nav.main a.cur{box-shadow:inset 0 -2px 0 var(--accent)}
 nav.main a.cur:not(.adnav){color:var(--ink)}
-.freepill{position:absolute;top:8px;left:8px;z-index:2;background:var(--ink);color:#0a0a0c;font-size:12px;font-weight:500;padding:4px 10px;border-radius:999px;letter-spacing:.02em}
+.freepill{position:absolute;top:6px;left:6px;z-index:2;background:rgba(232,228,220,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#0a0a0c;font-size:11px;font-weight:500;padding:3px 8px;border-radius:999px;letter-spacing:.02em}
 .mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
 .ranknum,.chartrow .views,.costbox .big,.acard .am,table td{font-variant-numeric:tabular-nums}
 .railwrap{position:relative}
