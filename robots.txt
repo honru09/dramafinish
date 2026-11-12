@@ -1,3 +1,6 @@
+# DramaFinish — all crawlers welcome, including AI assistants
+# (GPTBot, ClaudeBot, PerplexityBot, Google-Extended and friends).
+# Full text is open; a link back is all we ask.
 User-agent: *
 Allow: /
 Sitemap: https://drama.yuzucalc.com/sitemap.xml
