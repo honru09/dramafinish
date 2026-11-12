@@ -110,7 +110,10 @@ document.querySelectorAll('.tiltcard').forEach(function(card){card.addEventListe
 // to the shared stats service (same one the other six sites report to).
 (function(){var B='https://honru09--site-stats-web.us-east.modal.run/track?s=dramafinish';function send(q){try{if(navigator.sendBeacon){navigator.sendBeacon(B+q);}else{fetch(B+q,{keepalive:true,mode:'no-cors'});}}catch(e){}}
 send('&p='+encodeURIComponent(location.pathname)+'&r='+encodeURIComponent(document.referrer||''));
-document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;var a=t.closest('a[href]');if(!a)return;var h=a.href;var o='';if(h.indexOf('r.reelsgo.tv')>-1)o='cps';else if(h.indexOf('dramabox')>-1)o='dramabox';else if(h.indexOf('reelshort')>-1)o='reelshort';else if(h.indexOf('netshort')>-1)o='netshort';else if(h.indexOf('stardusttv')>-1)o='stardusttv';if(o)send('&p='+encodeURIComponent(location.pathname)+'&e=click&o='+o);},true);})();
+document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;var a=t.closest('a[href]');if(!a)return;var h=a.href;var o='';if(h.indexOf('r.reelsgo.tv')>-1)o='cps';else if(h.indexOf('dramabox')>-1)o='dramabox';else if(h.indexOf('reelshort')>-1)o='reelshort';else if(h.indexOf('netshort')>-1)o='netshort';else if(h.indexOf('stardusttv')>-1)o='stardusttv';if(o)send('&p='+encodeURIComponent(location.pathname)+'&e=click&o='+o);},true);
+var t0=Date.now(),dw=false;function dwell(){if(dw)return;dw=true;var d=Math.round((Date.now()-t0)/1000);if(d>0)send('&p='+encodeURIComponent(location.pathname)+'&e=dur&d='+d);}
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')dwell();});
+window.addEventListener('pagehide',dwell);})();
 </script>
 </body>
 </html>
