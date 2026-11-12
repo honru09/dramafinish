@@ -180,7 +180,7 @@ nav.main a.cur:not(.adnav){color:var(--ink)}
 @media (min-width:900px){.railbtn{display:flex}}
 .stickybar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(19,19,24,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line2);padding-bottom:env(safe-area-inset-bottom,0px);transition:opacity .25s ease,transform .25s ease}
 .stickybar-in{max-width:1080px;margin:0 auto;height:64px;padding:0 16px;display:flex;align-items:center;gap:12px}
-.sb-sum{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-size:12px}
+.sb-sum{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-size:12px;letter-spacing:.03em}
 .sb-sum strong{color:var(--ink)}
 .stickybar .btn{flex:0 0 auto;min-height:44px;padding:10px 18px;font-size:14.5px}
 .stickybar.sb-hide{opacity:0;transform:translateY(10px);pointer-events:none}
