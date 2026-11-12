@@ -32,7 +32,6 @@
 <a href="/compare/reelshort-vs-dramabox/">Compare</a>
 <a href="/guides/">Guides</a>
 <a class="adnav" href="/after-dark/">After Dark 18+</a>
-<a href="/about/">About</a>
 </nav>
 </div></header>
 
@@ -41,7 +40,7 @@
 <section>
 <p class="kicker">Find that drama</p>
 <h2>Saw a clip and can't find the drama?</h2>
-<p class="sub">Describe what happens, in your own words — a billionaire, a secret baby, a rejected mate, a wedding-day betrayal. This searches the titles, tropes and official synopses of all 1,164 catalogued dramas. Keyword-level matching, no tracking, nothing leaves your browser.</p>
+<p class="sub">Describe what happens, in your own words — a billionaire, a secret baby, a rejected mate, a wedding-day betrayal. This searches the titles, tropes and official synopses of all 2,364 catalogued dramas. Keyword-level matching, no tracking, nothing leaves your browser.</p>
 <input class="searchbox" id="q" type="search" placeholder="Describe a drama you saw…" autocomplete="off">
 </section>
 <section>
@@ -144,7 +143,7 @@
 </section>
 </main>
 <script>
-var INDEX = null;
+var INDEX = null, VOCAB = null;
 function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function card(d){
   var img = d.img ? '<img src="' + escHtml(d.img) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
@@ -158,36 +157,89 @@ function card(d){
     + '<span class="ah">' + escHtml(hook) + '</span>'
     + '<span class="am">' + meta.join(' · ') + '</span></div>';
 }
+function lev(a, b){
+  if (Math.abs(a.length - b.length) > 2) return 99;
+  var row = []; for (var j = 0; j <= b.length; j++) row[j] = j;
+  for (var i = 1; i <= a.length; i++) {
+    var prev = row[0]; row[0] = i;
+    for (var j2 = 1; j2 <= b.length; j2++) {
+      var tmp = row[j2];
+      row[j2] = Math.min(row[j2] + 1, row[j2 - 1] + 1, prev + (a[i - 1] === b[j2 - 1] ? 0 : 1));
+      prev = tmp;
+    }
+  }
+  return row[b.length];
+}
+function buildVocab(){
+  var freq = {};
+  for (var i = 0; i < INDEX.length; i++) {
+    var words = (INDEX[i].t + ' ' + (INDEX[i].g || '')).toLowerCase().split(/[^a-z0-9]+/);
+    for (var j = 0; j < words.length; j++) if (words[j].length >= 3) freq[words[j]] = (freq[words[j]] || 0) + 1;
+  }
+  VOCAB = Object.keys(freq).filter(function(w){ return freq[w] >= 2; });
+}
+function correctToken(tok){
+  if (!VOCAB || tok.length < 4 || VOCAB.indexOf(tok) !== -1) return tok;
+  var best = null, bestD = tok.length >= 6 ? 2 : 1;
+  for (var i = 0; i < VOCAB.length; i++) {
+    var dd = lev(tok, VOCAB[i]);
+    if (dd <= bestD && (best === null || dd < bestD)) { best = VOCAB[i]; bestD = dd; if (dd === 1) break; }
+  }
+  return best || tok;
+}
+function matchAll(toks, relax){
+  var hits = [];
+  for (var i = 0; i < INDEX.length; i++) {
+    var d = INDEX[i];
+    var hay = (d.t + ' ' + d.p + ' ' + (d.g || '') + ' ' + (d.x || '')).toLowerCase();
+    var titleHay = d.t.toLowerCase();
+    var matched = 0, score = 0;
+    for (var j = 0; j < toks.length; j++) {
+      if (hay.indexOf(toks[j]) !== -1) { matched++; if (titleHay.indexOf(toks[j]) !== -1) score += 3; }
+    }
+    if (relax ? matched >= 1 : matched === toks.length) {
+      hits.push({ d: d, score: matched * 10 + score + (d.f != null ? 1 : 0) + (d.img ? 0.5 : 0) });
+    }
+  }
+  hits.sort(function(a, b){ return b.score - a.score; });
+  return hits;
+}
 function run(q){
   var out = document.getElementById('results');
   var status = document.getElementById('status');
   q = (q || '').trim().toLowerCase();
   if (!INDEX) return;
   if (!q) { out.innerHTML = ''; status.textContent = 'Popular right now:'; document.getElementById('popular').style.display = ''; return; }
-  document.getElementById('popular').style.display = 'none';
   var toks = q.split(/\s+/).filter(Boolean);
-  var hits = [];
-  for (var i = 0; i < INDEX.length; i++) {
-    var d = INDEX[i];
-    var hay = (d.t + ' ' + d.p + ' ' + (d.g || '') + ' ' + (d.x || '')).toLowerCase();
-    var titleHay = d.t.toLowerCase();
-    var ok = true, score = 0;
-    for (var j = 0; j < toks.length; j++) {
-      if (hay.indexOf(toks[j]) === -1) { ok = false; break; }
-      if (titleHay.indexOf(toks[j]) !== -1) score += 3;
+  var hits = matchAll(toks, false);
+  var note = '';
+  if (hits.length < 5) {
+    var fixed = toks.map(correctToken);
+    if (fixed.join(' ') !== toks.join(' ')) {
+      var fh = matchAll(fixed, false);
+      if (fh.length > hits.length) { hits = fh; note = 'Showing results for "' + fixed.join(' ') + '" — '; }
     }
-    if (ok) hits.push({ d: d, score: score + (d.f != null ? 1 : 0) + (d.img ? 0.5 : 0) });
   }
-  hits.sort(function(a, b){ return b.score - a.score; });
-  hits = hits.slice(0, 60);
-  status.textContent = hits.length ? hits.length + ' match' + (hits.length === 1 ? '' : 'es') + ' for "' + q + '"' : 'No matches for "' + q + '" — try the trope words from the clip: billionaire, mafia, werewolf, secret baby, revenge…';
+  if (hits.length < 5) {
+    var relaxed = matchAll(toks, true).filter(function(h){ return hits.indexOf(h) === -1; });
+    if (relaxed.length) note += 'Close matches included. ';
+    hits = hits.concat(relaxed).slice(0, 60);
+  } else hits = hits.slice(0, 60);
+  if (!hits.length) {
+    document.getElementById('popular').style.display = '';
+    status.textContent = 'No matches for "' + q + '" yet — the catalog grows weekly. Meanwhile, the most-searched dramas and every trope shelf are below.';
+    out.innerHTML = '';
+    return;
+  }
+  document.getElementById('popular').style.display = 'none';
+  status.textContent = note + hits.length + ' match' + (hits.length === 1 ? '' : 'es') + ' for "' + q + '"';
   out.innerHTML = hits.map(function(h){ return card(h.d); }).join('');
 }
 var input = document.getElementById('q');
 var params = new URLSearchParams(location.search);
 if (params.get('q')) input.value = params.get('q');
 input.addEventListener('input', function(){ run(input.value); });
-fetch('/search-index.json').then(function(r){ return r.json(); }).then(function(idx){ INDEX = idx; run(input.value); });
+fetch('/search-index.json').then(function(r){ return r.json(); }).then(function(idx){ INDEX = idx; buildVocab(); run(input.value); });
 input.focus();
 </script>
 <footer class="site"><div class="wrap">

@@ -15,7 +15,8 @@ header.site .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padd
 .logo{font-family:"Fraunces",Georgia,serif;font-weight:800;font-size:21px;color:var(--ink);flex:0 0 auto}
 .logo span{color:var(--accent)}
 .logo:hover{text-decoration:none}
-nav.main{display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;font-size:14.5px;font-weight:600;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:center}
+nav.main{display:flex;gap:16px;flex-wrap:nowrap;overflow-x:auto;font-size:14.5px;font-weight:600;scrollbar-width:none;-webkit-overflow-scrolling:touch;align-items:center;
+-webkit-mask-image:linear-gradient(to right,#000 88%,transparent);mask-image:linear-gradient(to right,#000 88%,transparent)}
 nav.main::-webkit-scrollbar{display:none}
 nav.main a{color:var(--muted);white-space:nowrap;padding:6px 0}
 nav.main a:hover{color:var(--ink);text-decoration:none}
@@ -96,7 +97,7 @@ color:#ffb3bf;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:800
 .hooktitle{font-size:27px;line-height:1.22;margin:0 0 12px}
 .herocard{padding:14px}
 .herorow{display:flex;gap:14px;align-items:flex-start}
-.heroposter{position:relative;width:118px;aspect-ratio:2/3;border-radius:14px;overflow:hidden;flex:0 0 auto;background:linear-gradient(160deg,#22121a,#101016 70%);border:1px solid var(--line)}
+.heroposter{position:relative;width:132px;aspect-ratio:2/3;border-radius:14px;overflow:hidden;flex:0 0 auto;background:linear-gradient(160deg,#22121a,#101016 70%);border:1px solid var(--line)}
 .heroposter .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:10px;text-align:center;font-family:"Fraunces",Georgia,serif;font-size:14px;color:var(--muted)}
 .heroposter img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .heroinfo{flex:1;min-width:0}
@@ -141,11 +142,25 @@ details.gate[open ] summary::after{transform:rotate(180deg)}
 font-size:17px;padding:15px 22px;min-height:54px;font-family:inherit}
 .searchbox:focus{outline:2px solid var(--accent);outline-offset:1px}
 /* --- age gate --- */
-.agegate{position:fixed;inset:0;background:#070708;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
-.agebox{max-width:420px;text-align:center}
+.agegate{position:fixed;inset:0;background:#070708;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;overflow:hidden}
+.agegate .collage{position:absolute;inset:-30px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;opacity:.4;filter:blur(14px) brightness(.75);pointer-events:none}
+.agegate .collage img{width:100%;height:100%;object-fit:cover;border-radius:12px}
+.agebox{max-width:420px;text-align:center;position:relative;background:rgba(7,7,8,.72);padding:10px 6px;border-radius:18px}
 .agebox h2{font-size:30px;margin:0 0 10px}
 .agebox p{color:var(--muted)}
+.agebox .counts{color:var(--ink);font-weight:700;font-size:15.5px}
+.agebox .fineprint{font-size:12.5px;color:var(--faint);margin-top:14px}
 .agebox .btn{margin-top:12px}
+/* --- monthly issue --- */
+.issuebadge{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,59,85,.5);color:#ffb3bf;border-radius:999px;
+padding:3px 12px;font-size:13px;font-weight:700;margin:0 0 14px}
+.issuebadge:hover{text-decoration:none;border-color:var(--accent)}
+.newbadge{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;padding:0 7px;font-size:11.5px;font-weight:800;letter-spacing:.06em;vertical-align:2px}
+.acard.unconfirmed .posterwrap{border-style:dashed;border-color:rgba(255,59,85,.55)}
+details.costbox summary{cursor:pointer;font-weight:800;font-size:17px;list-style:none;min-height:40px;display:flex;align-items:center}
+details.costbox summary::-webkit-details-marker{display:none}
+details.costbox summary::after{content:"\25BE";margin-left:auto;color:var(--accent);font-size:22px}
+.splitbar .lab .pw{color:var(--accent);font-weight:800;letter-spacing:.05em}
 .adchip{display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,59,85,.5);color:#ffb3bf;border-radius:999px;
 padding:3px 12px;font-size:13px;font-weight:700}
 .adchip:hover{text-decoration:none;border-color:var(--accent)}
