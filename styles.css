@@ -55,4 +55,14 @@ article.guide li{margin-bottom:8px}
 footer.site{border-top:1px solid var(--line);color:var(--muted);font-size:14px;padding:24px 0 40px;margin-top:16px}
 .dhead{display:flex;gap:20px;flex-wrap:wrap}
 .dhead img{width:180px;aspect-ratio:2/3;object-fit:cover;border-radius:18px;background:#dfe3ea}
-@media (min-width:720px){.hero h1{font-size:42px}.grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
+.hooktitle{font-size:29px;line-height:1.25;margin:0 0 6px}
+.meters{min-width:250px;flex:1}
+.meter{display:grid;grid-template-columns:118px 1fr 28px;align-items:center;gap:10px;margin:7px 0;font-size:14px}
+.meter .bar{height:10px;background:#eef1f6;border-radius:99px;overflow:hidden}
+.meter .fill{height:100%;background:var(--accent)}
+details.gate{border:1.5px dashed #b9c2d4;border-radius:var(--radius);padding:18px 20px;background:#fbfcfe}
+details.gate summary{cursor:pointer;font-weight:800;font-size:17px}
+details.gate summary:hover{color:var(--navy2)}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.cta-row{margin-top:16px}
+@media (min-width:720px){.hero h1{font-size:42px}.grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}.hooktitle{font-size:35px}}
