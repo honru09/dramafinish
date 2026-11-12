@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0c">
+<title>ショートドラマ完走コスト計算（円）— コイン vs サブスク、出典付き | DramaFinish</title>
+<meta name="description" content="話数を入れると、DramaBoxとBUMPで「コインで全話」と「週額・月額サブスク」のどちらが安いかを円で比較。コイン換算は推定と明示し、価格は全件出典付き。">
+<link rel="canonical" href="https://drama.yuzucalc.com/ja/calculator/">
+<link rel="alternate" hreflang="en" href="https://drama.yuzucalc.com/calculator/">
+<link rel="alternate" hreflang="ja" href="https://drama.yuzucalc.com/ja/calculator/">
+<link rel="alternate" hreflang="x-default" href="https://drama.yuzucalc.com/calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DramaFinish">
+<meta property="og:title" content="ショートドラマ完走コスト計算（円）— コイン vs サブスク、出典付き | DramaFinish">
+<meta property="og:description" content="話数を入れると、DramaBoxとBUMPで「コインで全話」と「週額・月額サブスク」のどちらが安いかを円で比較。コイン換算は推定と明示し、価格は全件出典付き。">
+<meta property="og:url" content="https://drama.yuzucalc.com/ja/calculator/">
+<meta property="og:locale" content="ja_JP">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;800&family=Noto+Serif+JP:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+
+</head>
+<body class="lang-ja">
+
+<header class="site"><div class="wrap">
+<a class="logo" href="/ja/">DramaFinish<span>.</span></a>
+<nav class="main">
+<a href="/ja/search/">検索</a>
+<a href="/ja/charts/">ランキング</a>
+<a href="/ja/dramas/">作品一覧</a>
+<a href="/ja/apps/">アプリ</a>
+<a href="/ja/calculator/" class="cur" aria-current="page">料金計算</a>
+<a href="/ja/guides/">ガイド</a>
+<a href="/ja/after-dark/" class="adnav">夜の本棚 18+</a>
+</nav>
+</div></header>
+
+<main class="wrap">
+<p class="crumb"><a href="/ja/">トップ</a> / 料金計算</p>
+<section>
+<h2>完走コスト計算（円）</h2>
+<p class="sub">話数とアプリを選ぶと、コインで払う場合とサブスクリプションの場合を比べます。価格はすべて出典付きの実測値で、換算値は「推定」と明示します。</p>
+<div class="panel calc">
+<label for="appJa">アプリ</label>
+<select id="appJa">
+<option value="dramabox">DramaBox</option>
+<option value="bump">BUMP</option>
+</select>
+<label for="epsJa">シリーズの話数</label>
+<input type="number" id="epsJa" min="1" max="500" value="60">
+<div class="tablebox" style="margin-top:20px"><table>
+<tr><th>払い方</th><th>合計</th></tr>
+<tbody id="outJa"></tbody>
+</table></div>
+<p class="verdict" id="verdictJa"></p>
+<p class="note">DramaBoxはコインの単話価格を公式に公表していません。そのためコイン行は、出典のある実測（1話50コイン／300コイン ¥410のパック、出典：ドラマの箱 (kdrama-info.site)）からの<strong>推定</strong>です。公式価格として扱わないでください。サブスクリプションは自動更新です。週額プランが得になるのは、期間内に完走した場合だけです。</p>
+</div>
+</section>
+<section>
+<h2>計算に使った価格の出典</h2>
+<h3>DramaBox</h3>
+<div class="tablebox"><table><tr><th>項目</th><th>価格（円）</th><th>出典</th></tr><tr><td>Subscription Weekly（週額サブスク）</td><td>¥1,500</td><td>ショートドラマJP — App Store（日本）表示上位10項目、2026年10月7日時点</td></tr><tr><td>Monthly subscription（月額サブスク）</td><td>¥6,000</td><td>ショートドラマJP — App Store（日本）表示上位10項目、2026年10月7日時点</td></tr><tr><td>コイン 300コイン / 700+70コイン / 1,300+300コイン / 2,500+1,000コイン</td><td>¥410 / ¥1,060 / ¥1,960 / ¥3,760（1話50コイン）</td><td>ドラマの箱 (kdrama-info.site)</td></tr><tr><td>VIP会員 週会員 / 年会員（別時点の実利用レビュー価格、上記ストア表示とは異なる）</td><td>週 ¥2,040 / 年 ¥18,000</td><td>ドラマの箱 (kdrama-info.site)</td></tr><tr><td>見放題プラン 週額 / 年額（別ガイド・別時点）</td><td>週 ¥2,000（最初の3週間のみ週 ¥1,350） / 年 ¥20,000</td><td>アプリオ (appllio.com) ショートドラマアプリ徹底比較</td></tr><tr><td>コインチャージ 300/770/1600/3500コイン（アプリオ実測）</td><td>¥500 / ¥1,100 / ¥2,000 / ¥4,000</td><td>アプリオ (appllio.com)</td></tr></table></div>
+<h3 style="margin-top:20px">BUMP</h3>
+<div class="tablebox"><table><tr><th>項目</th><th>価格（円）</th><th>出典</th></tr><tr><td>有料エピソード 1話（税込）</td><td>¥97／話（97コイン、1コイン＝1円）</td><td>PR TIMES（emole公式発表の転載）／アプリオ</td></tr><tr><td>見放題プラン 週額（通常価格／初週価格）</td><td>通常 週 ¥2,980（初週 ¥1,480）</td><td>アプリオ (appllio.com) ※同記事の比較表注記: 見放題プランは『割引前の通常価格を記載』</td></tr><tr><td>見放題プラン 月額（通常価格／初月価格）</td><td>通常 月 ¥3,980（初月 ¥1,980）</td><td>アプリオ (appllio.com)</td></tr><tr><td>コインチャージ 480/800/1240/2900/4170/6930/13500コイン</td><td>¥480 / ¥800 / ¥1,240 / ¥2,800 / ¥4,000 / ¥6,600 / ¥12,800</td><td>アプリオ (appllio.com) 料金体系表</td></tr><tr><td>App Store（日本）アプリ内課金表示範囲</td><td>¥160〜¥4,000（コイン（待てば無料）＋プレミアム（週額・月額））</td><td>ショートドラマJP 日本発アプリ表、2026年10月7日時点</td></tr></table></div>
+<p class="note">同じアプリでも媒体・時点で価格が異なる場合があるため、計算には出典を明示した上で代表的な実測値を使い、出典表では全件を併記しています。</p>
+</section>
+</main>
+<script>
+var DATA = {"dramabox":{"weekly":1500,"monthly":6000,"estPerEp":68.3},"bump":{"perEp":97}};
+function yen(n){ return '¥' + Math.round(n).toLocaleString('ja-JP'); }
+function renderJa(){
+  var app = document.getElementById('appJa').value;
+  var eps = parseInt(document.getElementById('epsJa').value, 10);
+  if (!(eps >= 1)) eps = 1; if (eps > 500) eps = 500;
+  var rows = '', verdict = '';
+  if (app === 'dramabox'){
+    var est = DATA.dramabox.estPerEp ? Math.round(eps * DATA.dramabox.estPerEp) : null;
+    if (est != null) rows += '<tr><td>コイン（推定 — 1話50コイン×最安パック単価で換算）</td><td>約 ' + yen(est) + '</td></tr>';
+    if (DATA.dramabox.weekly) rows += '<tr><td>週額サブスクリプション</td><td>' + yen(DATA.dramabox.weekly) + '</td></tr>';
+    if (DATA.dramabox.monthly) rows += '<tr><td>月額サブスクリプション</td><td>' + yen(DATA.dramabox.monthly) + '</td></tr>';
+    if (est != null && DATA.dramabox.weekly) verdict = est <= DATA.dramabox.weekly ? '目安：この話数ならコイン（推定）の方が安い計算です。' : '目安：週額サブスクリプションの方が安い計算です（1週間で見終える場合）。';
+  } else {
+    var coin = DATA.bump.perEp ? eps * DATA.bump.perEp : null;
+    if (coin != null) rows += '<tr><td>1話ごとの課金（¥97／話）</td><td>' + yen(coin) + '</td></tr>';
+    rows += '<tr><td>見放題プラン</td><td>週額・月額は下の出典表をご覧ください（初回価格と通常価格が併記されています）</td></tr>';
+    verdict = coin != null ? '目安：話数が多いほど見放題プランが有利になります。正確な比較は出典表の価格でご確認ください。' : '';
+  }
+  document.getElementById('outJa').innerHTML = rows;
+  document.getElementById('verdictJa').textContent = verdict;
+}
+document.getElementById('appJa').addEventListener('change', renderJa);
+document.getElementById('epsJa').addEventListener('input', renderJa);
+renderJa();
+</script>
+<footer class="site"><div class="wrap">
+<p>DramaFinishは独立した情報ガイドです。ReelShort、DramaBox、その他掲載アプリの運営会社とは提携関係にありません（下記の広告提携を除く）。
+価格・評価は出典時点のスナップショット（アプリ実測：2026-11-12）で、変動します。支払い前に必ずアプリ内でご確認ください。</p>
+<p class="prfoot">提携について：当サイトの一部リンクはアフィリエイト広告です。リンク経由で登録・購入があった場合、当サイトが報酬を受け取ることがあります。順位は報酬で変えていない — ランキングや掲載順位は、報酬の有無・金額では決めていません。方針の全文は<a href="/ja/ad-policy/">広告掲載方針</a>をご覧ください。</p>
+<p><a href="/ja/about/">このサイトについて・データ出典</a> · <a href="/ja/ad-policy/">広告掲載方針</a> · <a href="/ja/after-dark/">夜の本棚（18+）</a> · <a href="/sitemap.xml">サイトマップ</a></p>
+</div></footer>
+<script>
+// A7: desktop rail paddles — rails are swipe-obvious on touch but give mouse
+// users no scroll signal. Progressive enhancement only: wrap each rail and
+// add prev/next buttons that scroll by 80% of the rail width.
+(function(){if(!window.matchMedia||!matchMedia('(min-width:900px)').matches)return;document.querySelectorAll('.rail').forEach(function(rail){var wrap=document.createElement('div');wrap.className='railwrap';rail.parentNode.insertBefore(wrap,rail);wrap.appendChild(rail);[['prev','‹','Scroll back'],['next','›','Scroll forward']].forEach(function(cfg){var b=document.createElement('button');b.type='button';b.className='railbtn '+cfg[0];b.textContent=cfg[1];b.setAttribute('aria-label',cfg[2]);b.addEventListener('click',function(){rail.scrollBy({left:(cfg[0]==='prev'?-1:1)*rail.clientWidth*0.8,behavior:'smooth'});});wrap.appendChild(b);});});})();
+</script>
+</body>
+</html>
