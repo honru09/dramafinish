@@ -263,10 +263,13 @@ body.has-stickybar{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
 body.lang-ja{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:400}
 .lang-ja h1,.lang-ja h2,.lang-ja h3,.lang-ja .display,.lang-ja .hooktitle{font-family:"Noto Serif JP","Hiragino Mincho ProN",Georgia,serif}
 .lang-ja .logo{font-family:"Noto Serif JP",Georgia,serif}
-.prbar{background:var(--accent);color:#fff;font-size:14px;font-weight:700;text-align:center;padding:8px 16px}
+.prbar{background:var(--accent);color:#fff;font-size:12px;font-weight:700;text-align:center;padding:3px 8px;line-height:1.45}
 .prlead{color:var(--muted);font-size:14.5px;margin:14px 0 0}
 .prchip{display:inline-block;background:var(--accent);color:#fff;border-radius:6px;padding:1px 8px;font-size:13px;font-weight:800;vertical-align:2px;margin-left:8px}
 .prfoot{border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;background:var(--surface)}
+.finefold{border:1px solid var(--line);border-radius:var(--radius);padding:10px 14px;background:var(--surface);margin:0 0 12px}
+.finefold summary{cursor:pointer;font-weight:700;font-size:13px;color:var(--muted)}
+.finefold p{font-size:13.5px;margin:10px 0 0}
 .ja-ad .kicker{color:#ffb3bf}
 .ja-ad .posterwrap{border-color:rgba(255,59,85,.35)}
 .agegate-ja .agebox h2{font-family:"Noto Serif JP",Georgia,serif}
