@@ -110,6 +110,24 @@ color:#ffb3bf;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:800
 .rail::-webkit-scrollbar{display:none}
 .rail .acard{flex:0 0 138px;scroll-snap-align:start}
 .rail .acard.wide{flex-basis:158px}
+/* --- VOD guide cards + home rail (window #34) --- */
+.grid.vodgrid{grid-template-columns:repeat(auto-fill,minmax(280px,360px))}
+.vodcard{padding:0;overflow:hidden;gap:0}
+.vodcard .vodart{display:block;background:var(--surface2);border-bottom:1px solid var(--line)}
+.vodcard .vodart img{display:block;width:100%;height:auto}
+.vodcard .vodbody{display:flex;flex-direction:column;gap:6px;padding:16px}
+.vodcard .vodbody .t{font-size:var(--fs-2)}
+.vodfacts{display:block}
+a.vodrail{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch;color:var(--ink)}
+a.vodrail::-webkit-scrollbar{display:none}
+a.vodrail:hover{text-decoration:none}
+a.vodrail:hover .vodmini{border-color:var(--line2)}
+.vodmini{flex:0 0 272px;scroll-snap-align:start;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color .15s ease-out}
+.vodmini .vodmini-art{display:block;background:var(--surface2)}
+.vodmini .vodmini-art img{display:block;width:100%;height:auto}
+.vodmini .vodmini-body{display:flex;flex-direction:column;gap:2px;padding:10px 14px 12px}
+.vodmini .vodmini-name{font-weight:700;line-height:1.3}
+.vodmini .vodmini-price{color:var(--muted);font-size:13.5px}
 /* --- drama page --- */
 .hooktitle{font-size:27px;line-height:1.10;letter-spacing:-0.5px;margin:0 0 12px}
 .herocard{padding:14px}
