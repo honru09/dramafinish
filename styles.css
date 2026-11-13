@@ -263,6 +263,38 @@ body.has-stickybar{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
    30px -> 56px at >=900px; mobile keeps the 24px rule at max-width:899px. */
 @media (min-width:900px){body.pg-t6 section{margin:0 0 56px}}
 @media (max-width:899px){section{margin:0 0 24px}.panel{padding:18px}.herocard{padding:14px}.crumb{margin:14px 0 8px}table{font-size:13.5px}th,td{padding:8px 8px}.hero h1{font-size:28px}}
+/* B2-T3 (TEST 2026-11-14, window #50): Top 3 card fan, EN /charts/ only.
+   Scoped by body.pg-charts (set only on the EN /charts/ writePage call),
+   so JP /charts/ (writePageJa passes no pageClass) and the EN home
+   (pg-t6 only) are untouched. Base: fan hidden, Top 3 stay plain rows.
+   Desktop + fine pointer: fan shows, rows 1-3 hide (same links, no dup).
+   Rest -7/0/+7 deg, hover/focus-within expands to -14/0/+14 deg + 26px
+   spread; 250ms ease-out (B2 two-tier cap). Reduced motion: flat row. */
+.chartfan{display:none}
+@media (min-width:900px) and (pointer:fine){
+body.pg-charts .chartfan{display:flex;justify-content:center;align-items:flex-end;padding:34px 0 12px;margin:2px 0 16px}
+body.pg-charts .chartfan .fan-card{--rot:0deg;--tx:0px;--ty:0px;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;width:200px;flex:0 0 auto;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 14px 16px;color:var(--ink);text-align:center;transform:rotate(var(--rot)) translate(var(--tx),var(--ty));transform-origin:50% 100%;transition:transform .25s ease-out,border-color .15s ease-out}
+body.pg-charts .chartfan .fan-card:hover{text-decoration:none;border-color:var(--line2)}
+body.pg-charts .chartfan .fan-1{order:2;z-index:3}
+body.pg-charts .chartfan .fan-2{order:1;z-index:2;--rot:-7deg;--ty:8px;margin-right:-26px}
+body.pg-charts .chartfan .fan-3{order:3;z-index:1;--rot:7deg;--ty:8px;margin-left:-26px}
+body.pg-charts .chartfan:hover .fan-1,body.pg-charts .chartfan:focus-within .fan-1{--ty:-6px}
+body.pg-charts .chartfan:hover .fan-2,body.pg-charts .chartfan:focus-within .fan-2{--rot:-14deg;--tx:-26px;--ty:2px}
+body.pg-charts .chartfan:hover .fan-3,body.pg-charts .chartfan:focus-within .fan-3{--rot:14deg;--tx:26px;--ty:2px}
+body.pg-charts .chartfan .fan-poster{width:100%;aspect-ratio:2/3;border-radius:8px;overflow:hidden;border:1px solid var(--line);background:var(--surface2)}
+body.pg-charts .chartfan .fan-poster img{width:100%;height:100%;object-fit:cover;transition:transform .2s ease-out}
+body.pg-charts .chartfan .fan-card:hover .fan-poster img{transform:scale(1.05)}
+body.pg-charts .chartfan .fan-rank{font-family:"Fraunces",Georgia,serif;font-size:26px;font-weight:800;color:var(--accent);line-height:1}
+body.pg-charts .chartfan .fan-title{font-weight:700;font-size:15px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+body.pg-charts .chartfan .fan-views{color:var(--muted);font-size:13px}
+body.pg-charts .chartfan .fan-views b{font-family:"Fraunces",Georgia,serif;color:var(--ink);font-size:15px}
+body.pg-charts .chartrow-top3{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+body.pg-charts .chartfan .fan-card{transform:none!important;transition:none!important}
+body.pg-charts .chartfan .fan-2,body.pg-charts .chartfan .fan-3{margin:0}
+body.pg-charts .chartfan{gap:16px}
+}
 /* --- JP locale additions (scoped: .lang-ja / .ja-ad / PR components only) --- */
 body.lang-ja{font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-weight:400}
 .lang-ja h1,.lang-ja h2,.lang-ja h3,.lang-ja .display,.lang-ja .hooktitle{font-family:"Noto Serif JP","Hiragino Mincho ProN",Georgia,serif}
