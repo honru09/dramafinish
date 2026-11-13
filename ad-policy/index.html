@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a0a0c">
+<title>Ad policy — PR labels and how rankings are decided | DramaFinish</title>
+<meta name="description" content="How DramaFinish labels advertising: the PR bar and PR chips, affiliate commissions, why rankings cannot be bought, and how paid partner work is disclosed.">
+<link rel="canonical" href="https://drama.yuzucalc.com/ad-policy/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DramaFinish">
+<meta property="og:title" content="Ad policy — PR labels and how rankings are decided | DramaFinish">
+<meta property="og:description" content="How DramaFinish labels advertising: the PR bar and PR chips, affiliate commissions, why rankings cannot be bought, and how paid partner work is disclosed.">
+<meta property="og:url" content="https://drama.yuzucalc.com/ad-policy/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+
+<header class="site"><div class="wrap">
+<a class="logo" href="/">DramaFinish<span>.</span></a>
+<nav class="main">
+<a href="/search/">Search</a>
+<a href="/charts/">Charts</a>
+<a href="/dramas/">Dramas</a>
+<a href="/apps/">Apps</a>
+<a href="/calculator/">Calculator</a>
+<a href="/compare/reelshort-vs-dramabox/">Compare</a>
+<a href="/guides/">Guides</a>
+<a href="/after-dark/" class="adnav">After Dark 18+</a>
+</nav>
+</div></header>
+
+<main class="wrap">
+<p class="crumb"><a href="/">Home</a> / Ad policy</p>
+<article class="guide">
+<h2>Ad policy</h2>
+<h3>How PR labelling works</h3>
+<p>Any page that contains affiliate advertising carries a slim red bar at the very top of the page — "PR — This page contains promotions (affiliate advertising)" — in high-contrast scarlet and white, visible the moment the page opens, without scrolling or tapping. Every affiliate link also carries a "PR" chip next to it, and the full disclosure sits in the labelled "Affiliate disclosure &amp; disclaimer" fold at the bottom of every page, one tap away at any time.</p>
+<h3>Commissions and rankings</h3>
+<p>If you register or buy through one of those links, we may earn a commission, at no extra cost to you. <strong>Rankings cannot be bought</strong>: chart positions and listing order are decided only by the editorial measures disclosed on each page — published view counts, ratings and our own editorial ratings — never by whether a commission exists or how large it is.</p>
+<h3>Paid work with partners (disclosed)</h3>
+<ul>
+<li><strong>Market analysis reports</strong>: analysis built from our measured catalog data.</li>
+<li><strong>Commissioned reviews</strong>: if a review is commissioned, the page says so. The verdict stays ours; a client never sets the conclusion.</li>
+<li><strong>Placements</strong>: anything placed as advertising is labelled as advertising.</li>
+</ul>
+<p>Prices are not published; each engagement is quoted individually. We never present another company's prices as our own.</p>
+<h3>Pages submitted for ad review</h3>
+<p>For advertising review we submit the general pages of this site, excluding the adult section. The adult section (/after-dark/) is not hidden — its existence is disclosed on this page and in the sitemap.</p>
+<h3>Contact</h3>
+<p>Questions about this policy or a listing: hongrun01@gmail.com.</p>
+</article>
+</main>
+<footer class="site"><div class="wrap">
+<p>DramaFinish is an independent guide. It is not affiliated with ReelShort, DramaBox or any other app listed here.</p>
+<details class="finefold"><summary>Affiliate disclosure &amp; disclaimer</summary>
+<p>Prices and ratings are snapshots (apps: 12 November 2026; pricing: 12 November 2026) and change over time — always check the app before paying.</p>
+<p>Some outbound links are affiliate links; they never change the price you pay.</p>
+<p>The full policy — what the PR bar and PR chips mean, and why commissions never affect rankings — is on the <a href="/ad-policy/">ad policy page</a>.</p>
+</details>
+<p><a href="/about/">About &amp; data sources</a> · <a href="/ad-policy/">Ad policy</a> · <a href="/after-dark/">After Dark (18+)</a> · <a href="/sitemap.xml">Sitemap</a></p>
+</div></footer>
+<script>
+// A7: desktop rail paddles — rails are swipe-obvious on touch but give mouse
+// users no scroll signal. Progressive enhancement only: wrap each rail and
+// add prev/next buttons that scroll by 80% of the rail width.
+(function(){if(!window.matchMedia||!matchMedia('(min-width:900px)').matches)return;document.querySelectorAll('.rail').forEach(function(rail){var wrap=document.createElement('div');wrap.className='railwrap';rail.parentNode.insertBefore(wrap,rail);wrap.appendChild(rail);[['prev','‹','Scroll back'],['next','›','Scroll forward']].forEach(function(cfg){var b=document.createElement('button');b.type='button';b.className='railbtn '+cfg[0];b.textContent=cfg[1];b.setAttribute('aria-label',cfg[2]);b.addEventListener('click',function(){rail.scrollBy({left:(cfg[0]==='prev'?-1:1)*rail.clientWidth*0.8,behavior:'smooth'});});wrap.appendChild(b);});});})();
+</script>
+<script>
+// v4.4 (DESIGN_BORROW2 ADOPT 6+7): Direction Aware Hover on poster cards and
+// 3D tilt on the home hero spotlight card. Desktop fine-pointer only; fully
+// inert on touch, below 900px, and under prefers-reduced-motion. Delegated
+// mouseover/mouseout so client-rendered search cards are covered too.
+(function(){if(!window.matchMedia)return;if(!matchMedia('(min-width:900px) and (pointer:fine)').matches)return;if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+function dirOf(e,el){var r=el.getBoundingClientRect();var x=e.clientX-r.left-r.width/2;var y=e.clientY-r.top-r.height/2;var a=Math.atan2(y,x)*180/Math.PI;if(a>=-45&&a<45)return 'r';if(a>=45&&a<135)return 'b';if(a<-45&&a>=-135)return 't';return 'l';}
+function pwOf(e){var t=e.target;if(!t||!t.closest)return null;var pw=t.closest('.posterwrap');if(!pw||(e.relatedTarget&&pw.contains(e.relatedTarget)))return null;return pw;}
+document.addEventListener('mouseover',function(e){var pw=pwOf(e);if(!pw)return;var ov=pw.querySelector(':scope > .dah');if(!ov)return;ov.setAttribute('data-dir',dirOf(e,pw));ov.classList.add('on');});
+document.addEventListener('mouseout',function(e){var pw=pwOf(e);if(!pw)return;var ov=pw.querySelector(':scope > .dah');if(!ov)return;ov.setAttribute('data-dir',dirOf(e,pw));ov.classList.remove('on');});
+document.querySelectorAll('.tiltcard').forEach(function(card){card.addEventListener('mousemove',function(e){card.classList.add('tilting');var r=card.getBoundingClientRect();var rx=(e.clientY-r.top-r.height/2)/25;var ry=(e.clientX-r.left-r.width/2)/25;rx=Math.max(-6,Math.min(6,rx));ry=Math.max(-6,Math.min(6,ry));card.style.transform='translateX(11px) rotateX('+(-rx).toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';});card.addEventListener('mouseleave',function(){card.style.transform='';card.classList.remove('tilting');});});})();
+</script>
+<script>
+// site-stats beacon (2026-11-12, user order): pageview + outbound watch clicks
+// to the shared stats service (same one the other six sites report to).
+(function(){var B='https://honru09--site-stats-web.us-east.modal.run/track?s=dramafinish';function send(q){try{if(navigator.sendBeacon){navigator.sendBeacon(B+q);}else{fetch(B+q,{keepalive:true,mode:'no-cors'});}}catch(e){}}
+send('&p='+encodeURIComponent(location.pathname)+'&r='+encodeURIComponent(document.referrer||''));
+document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;var a=t.closest('a[href]');if(!a)return;var h=a.href;var o='';if(h.indexOf('r.reelsgo.tv')>-1)o='cps';else if(h.indexOf('dramabox')>-1)o='dramabox';else if(h.indexOf('reelshort')>-1)o='reelshort';else if(h.indexOf('netshort')>-1)o='netshort';else if(h.indexOf('stardusttv')>-1)o='stardusttv';if(o)send('&p='+encodeURIComponent(location.pathname)+'&e=click&o='+o);},true);
+var t0=Date.now(),dw=false;function dwell(){if(dw)return;dw=true;var d=Math.round((Date.now()-t0)/1000);if(d>0)send('&p='+encodeURIComponent(location.pathname)+'&e=dur&d='+d);}
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')dwell();});
+window.addEventListener('pagehide',dwell);})();
+</script>
+</body>
+</html>

@@ -55,6 +55,10 @@ display:flex;flex-direction:column;gap:6px;height:100%}
 .card .m{color:var(--muted);font-size:14px}
 table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:var(--radius);overflow:hidden;font-size:15px}
 .tablebox{border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+/* Window #43: the /ja/free/ comparison table has five columns; at phone
+   widths they crushed into per-character strips. Give the table a floor
+   width and let .tablebox scroll sideways instead — no data is hidden. */
+.freetable{min-width:660px}
 th,td{padding:10px 12px;text-align:left;border-bottom:.5px solid var(--line);vertical-align:top}
 th{background:var(--surface2);color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
 tr:last-child td{border-bottom:none}
