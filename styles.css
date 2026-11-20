@@ -178,6 +178,12 @@ details.gate[open ] summary::after{transform:rotate(180deg)}
 .chartrow .cm{color:var(--muted);font-size:13.5px}
 .chartrow .views{margin-left:auto;font-family:"Fraunces",Georgia,serif;font-size:19px;font-weight:800;white-space:nowrap}
 .chartrow .views small{display:block;font-family:"Manrope",sans-serif;font-size:11.5px;color:var(--faint);font-weight:590;text-align:right}
+/* Window #118 (BUG-7/B): JP score column — number + unit on one baseline so the
+   11.5px unit can no longer read as clipped at the right edge. Font sizes
+   unchanged (19px / 11.5px); the column is flex:none, the middle span may shrink. */
+.chartrow .views-score{display:flex;align-items:baseline;gap:2px;flex:0 0 auto}
+.chartrow .views-score small{display:inline;text-align:left}
+.chartrow .chartmid{min-width:0}
 /* --- search --- */
 .searchbox{width:100%;background:var(--surface);border:1px solid var(--line2);border-radius:999px;color:var(--ink);
 font-size:17px;padding:15px 22px;min-height:54px;font-family:inherit}
