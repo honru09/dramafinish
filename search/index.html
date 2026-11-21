@@ -223,7 +223,7 @@ function run(q){
   q = (q || '').trim().toLowerCase();
   if (!INDEX) return;
   if (!q) { out.innerHTML = ''; status.textContent = 'Popular right now:'; document.getElementById('popular').style.display = ''; return; }
-  var toks = q.split(/\s+/).filter(Boolean);
+  var toks = q.replace(/-/g, ' ').split(/\s+/).filter(Boolean);
   var hits = matchAll(toks, false);
   var note = '';
   if (hits.length < 5) {
