@@ -111,9 +111,9 @@ var INDEX = null;
 function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function card(d){
   var img = d.img ? '<img src="' + escHtml(d.img) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
-  var pill = d.f != null ? '<span class="freepill">' + d.f + '話無料</span>' : '';
+  var pill = d.f != null && d.f > 0 ? '<span class="freepill">' + d.f + '話無料</span>' : '';
   var meta = [];
-  if (d.f != null) meta.push('<span class="free">' + d.f + '話無料</span>');
+  if (d.f != null && d.f > 0) meta.push('<span class="free">' + d.f + '話無料</span>');
   if (d.e) meta.push('全' + d.e + '話');
   meta.push(escHtml(d.p));
   return '<div class="acard"><a href="/ja/dramas/' + d.s + '/"><span class="posterwrap"><span class="ph">' + escHtml(d.t) + '</span>' + img + pill + '<span class="dah" aria-hidden="true"><span class="dah-in"><span class="dah-t">' + escHtml(d.t) + '</span><span class="dah-c">▶ 見る</span></span></span>' + '</span></a>'

@@ -159,9 +159,9 @@ var INDEX = null, VOCAB = null;
 function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 function card(d){
   var img = d.img ? '<img src="' + escHtml(d.img) + '" alt="" loading="lazy" onerror="this.remove()">' : '';
-  var pill = d.f != null ? '<span class="freepill">' + d.f + ' FREE</span>' : '';
+  var pill = d.f != null && d.f > 0 ? '<span class="freepill">' + d.f + ' FREE</span>' : '';
   var meta = [];
-  if (d.f != null) meta.push('<span class="free">' + d.f + ' free eps</span>');
+  if (d.f != null && d.f > 0) meta.push('<span class="free">' + d.f + ' free eps</span>');
   if (d.e) meta.push(d.e + ' eps');
   meta.push(escHtml(d.p));
   var hook = d.x ? d.x : (d.g || '');
